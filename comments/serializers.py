@@ -8,6 +8,10 @@ class CommentSerializer(serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='user.profile.id')
     profile_image = serializers.ReadOnlyField(source='user.profile.image.url')
 
+    def get_is_user(self, obj):
+        request = self.context['request']
+        return request.user == obj.user
+
     class Meta:
         model = Comment
         fields = [
