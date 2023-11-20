@@ -9,7 +9,7 @@ class Profile(models.Model):
     modified_at = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=255, blank=True)
     bio = models.TextField(blank=True)
-    interest = models.CharField(max_length=255, blank=True)
+    interests = models.CharField(max_length=255, blank=True)
     image = models.ImageField(
         upload_to = 'images/', default='../default_profile_mlzeil', blank=True
     )
