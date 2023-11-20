@@ -1,3 +1,18 @@
-from django.shortcuts import render
+from rest_framework import generics, permissions
+from drf_api_littleangels.permissions import IsOwnerOrReadOnly
+from .models import Post
+from .serializers import PostSerializer
 
-# Create your views here.
+class PostList(generics.ListCreateAPIView):
+    serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = Post.objects.all()
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+
+class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsOwnerOrReadOnly]
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
