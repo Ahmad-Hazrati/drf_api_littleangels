@@ -7,6 +7,9 @@ class ProfileSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source='user.username')
     is_user = serializers.SerializerMethodField()
     following_id = serializers.SerializerMethodField()
+    posts_count = serializers.ReadOnlyField()
+    followers_count = serializers.ReadOnlyField()
+    following_count = serializers.ReadOnlyField()
 
     def get_is_user(self, obj):
         request = self.context['request']
@@ -24,15 +27,8 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = [
-            'id',
-            'user',
-            'created_at',
-            'modified_at',
-            'name',
-            'bio',
-            'interests',
-            'image',
-            'is_user',
-            'following_id',
+            'id', 'user', 'created_at', 'modified_at', 'name',
+            'bio', 'interests', 'image', 'is_user', 'following_id',
+            'posts_count','followers_count', 'following_count',
         ]
         
