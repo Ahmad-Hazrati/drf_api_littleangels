@@ -1,5 +1,6 @@
 from django.db.models import Count
 from rest_framework import generics, permissions, filters
+from django_filters.rest_framework import DjangoFilterBackend
 from drf_api_littleangels.permissions import IsOwnerOrReadOnly
 from .models import Post
 from .serializers import PostSerializer
@@ -14,14 +15,20 @@ class PostList(generics.ListCreateAPIView):
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
+        DjangoFilterBackend,
+    ]
+    filterset_fields = [
+        'user__followed__user__profile',
+        'likes__user__profile',
+        'user__profile',
+    ]
+    search_fields = [
+        'user__username', 'title'
     ]
     ordering_fields = [
         'likes_count',
         'comments_count',
         'likes__created_at',
-    ]
-    search_fields = [
-        'user__username', 'title'
     ]
 
     def perform_create(self, serializer):
