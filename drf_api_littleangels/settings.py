@@ -40,8 +40,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 
-ALLOWED_HOSTS = os.environ.get['ALLOWED_HOST',
-    '8000-ahmadhazrat-drfapilittl-ldkf5dv9gvn.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = [
+   os.environ.get('ALLOWED_HOST'),
+   '8000-ahmadhazrat-drfapilittl-ldkf5dv9gvn.ws-eu106.gitpod.io',
+]
 
 
 # Application definition
