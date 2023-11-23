@@ -28,7 +28,7 @@ class Event(models.Model):
     venue = models.CharField(max_length=150)
     slug = models.SlugField(max_length=250, unique_for_date='published')
     published = models.DateTimeField(default=timezone.now)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='event_post')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='event_post')
     status = models.CharField(max_length=10, choices = options, default='published')
     objects = models.Manager()  # Default object manager
     eventobjects = EventObjects()   # Custom object manager
