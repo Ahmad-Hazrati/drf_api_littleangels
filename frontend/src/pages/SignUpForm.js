@@ -1,19 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/SignInUpForm.module.css";
 import btnStyles from "../styles/Button.module.css";
 import appStyles from "../App.module.css";
 
-import { Form, Button, Image, Col, Row, Container } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  Image,
+  Col,
+  Row,
+  Container,
+  Alert,
+} from "react-bootstrap";
+import axios from "axios";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const SignUpForm = () => {
+  const [signUpData, setSignUpData] = useState({
+    username: "",
+    password1: "",
+    password2: "",
+  });
+
+  const { username, password1, password2 } = signUpData;
+
+  const [errors, setErrors] = useState({});
+
+  const history = useHistory();
+
+  const handleChange = (event) => {
+    setSignUpData({
+      ...signUpData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post("/dj-rest-auth/registration/", signUpData);
+      history.push("/signin");
+    } catch (err) {
+      setErrors(err.response?.data);
+    }
+  };
+
   return (
     <Row className={styles.Row}>
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign up</h1>
 
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">username</Form.Label>
               <Form.Control
@@ -21,8 +60,15 @@ const SignUpForm = () => {
                 type="text"
                 placeholder="Username"
                 name="username"
+                value={username}
+                onChange={handleChange}
               />
             </Form.Group>
+            {errors.username?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             <Form.Group controlId="password1">
               <Form.Label className="d-none">Password</Form.Label>
@@ -31,8 +77,15 @@ const SignUpForm = () => {
                 type="password"
                 placeholder="Password"
                 name="password1"
+                value={password1}
+                onChange={handleChange}
               />
             </Form.Group>
+            {errors.password1?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             <Form.Group controlId="password2">
               <Form.Label className="d-none">Confirm password</Form.Label>
@@ -41,11 +94,27 @@ const SignUpForm = () => {
                 type="password"
                 placeholder="Confirm password"
                 name="password2"
+                value={password2}
+                onChange={handleChange}
               />
             </Form.Group>
-            <Button className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`} type="submit">
+            {errors.password2?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
+              type="submit"
+            >
               Sign up
             </Button>
+            {errors.non_field_errors?.map((message, idx) => (
+              <Alert variant="warning" key={idx} className="mt-3">
+                {message}
+              </Alert>
+            ))}
           </Form>
         </Container>
         <Container className={`mt-3 ${appStyles.Content}`}>
@@ -60,7 +129,9 @@ const SignUpForm = () => {
       >
         <Image
           className={`${appStyles.FillerImage}`}
-          src={"https://img.freepik.com/free-photo/friendly-cheerful-young-tender-blond-girl-with-blue-eyes-extend-arms-smiling-joyfully-wanna-cuddle-invite-friend-give-warm-hug_176420-44810.jpg?size=626&ext=jpg&ga=GA1.1.2085478054.1696925884&semt=ais"}
+          src={
+            "https://img.freepik.com/free-photo/friendly-cheerful-young-tender-blond-girl-with-blue-eyes-extend-arms-smiling-joyfully-wanna-cuddle-invite-friend-give-warm-hug_176420-44810.jpg?size=626&ext=jpg&ga=GA1.1.2085478054.1696925884&semt=ais"
+          }
         />
       </Col>
     </Row>
