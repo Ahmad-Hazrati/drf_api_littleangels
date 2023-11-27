@@ -14,34 +14,37 @@ class CategoryList(generics.ListCreateAPIView):
 class EventList(generics.ListAPIView):
     serializer_class = EventSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Event.eventobjects.annotate(
-        likes_count = Count('likes', distinct=True),
-    ).order_by('-created_at')
-    ordering_fields = [
-        'likes_count',
-        'likes__created_at',
-    ]
+    queryset = Event.objects.all()
+    # queryset = Event.eventobjects.annotate(
+    #     likes_count = Count('likes', distinct=True),
+    # ).order_by('-created_at')
+    # ordering_fields = [
+    #     'likes_count',
+    #     'likes__created_at',
+    # ]
 
 
 class EventCreate(generics.CreateAPIView):
     serializer_class = EventSerializer
     permission_classes = [IsOwnerOrReadOnly]
-    queryset = Event.objects.annotate(
-        likes_count = Count('likes', distinct=True),
-    ).order_by('-created_at')
-    ordering_fields = [
-        'likes_count',
-        'likes__created_at',
-    ]
+    queryset = Event.objects.all()
+    # queryset = Event.objects.annotate(
+    #     likes_count = Count('event_likes', distinct=True),
+    # ).order_by('-created_at')
+    # ordering_fields = [
+    #     'likes_count',
+    #     'likes__created_at',
+    # ]
 
 
 class EventDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = EventSerializer
     permission_classes = [IsOwnerOrReadOnly]
-    queryset = Event.objects.annotate(
-        likes_count = Count('likes', distinct=True),
-    ).order_by('-created_at')
-    ordering_fields = [
-        'likes_count',
-        'likes__created_at',
-    ]
+    queryset = Event.objects.all()
+    # queryset = Event.objects.annotate(
+    #     likes_count = Count('event_likes', distinct=True),
+    # ).order_by('-created_at')
+    # ordering_fields = [
+    #     'likes_count',
+    #     'likes__created_at',
+    # ]
