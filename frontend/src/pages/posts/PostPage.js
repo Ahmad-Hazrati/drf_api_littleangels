@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Container } from "react-bootstrap";
+
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+
 import appStyles from "../../App.module.css";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import Post from "./Post";
-import CommentCreateForm from "../comments/CommentCreateForm";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Comment from "../comments/Comment";
 
-export const PostPage = () => {
+import CommentCreateForm from "../comments/CommentCreateForm";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+
+import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from "../../components/Asset";
+import { fetchMoreData } from "../../utils/utils";
+
+function PostPage() {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
 
@@ -29,6 +38,7 @@ export const PostPage = () => {
         console.log(err);
       }
     };
+
     handleMount();
   }, [id]);
 
@@ -49,19 +59,25 @@ export const PostPage = () => {
           ) : comments.results.length ? (
             "Comments"
           ) : null}
-          {comments.results ? (
-            comments.results.map((comment) => (
-              <Comment
-                key={comment.id}
-                {...comment}
-                setPost={setPost}
-                setComments={setComments}
-              />
-            ))
+          {comments.results.length ? (
+            <InfiniteScroll
+              children={comments.results.map((comment) => (
+                <Comment
+                  key={comment.id}
+                  {...comment}
+                  setPost={setPost}
+                  setComments={setComments}
+                />
+              ))}
+              dataLength={comments.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!comments.next}
+              next={() => fetchMoreData(comments, setComments)}
+            />
           ) : currentUser ? (
-            <span>No comments yet, be the first one to comment!</span>
+            <span>No comments yet, be the first to comment!</span>
           ) : (
-            <span>No comments...yet!</span>
+            <span>No comments... yet</span>
           )}
         </Container>
       </Col>
@@ -70,4 +86,6 @@ export const PostPage = () => {
       </Col>
     </Row>
   );
-};
+}
+
+export default PostPage;
