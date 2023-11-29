@@ -35,6 +35,7 @@ const Comment = (props) => {
           },
         ],
       }));
+      
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.filter((comment) => comment.id !== id),
