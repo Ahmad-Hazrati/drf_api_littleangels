@@ -2,27 +2,30 @@ import React from "react";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Media from "react-bootstrap/Media";
 import { Link } from "react-router-dom/cjs/react-router-dom";
-import { Overlay, OverlayTrigger, Tooltip } from "react-bootstrap";
+import btnStyles from "../../styles/Button.module.css";
+import styles from "../../styles/Post.module.css";
+import { Form } from "react-bootstrap";
 
 const Event = (props) => {
   const {
     id,
     title,
-    category,
     excerpt,
     description,
+    event_image,
+    alt_tag,
+    venue,
+    published,
+    eventobjects,
+    max_seats,
+    registered_seats,
+    available_seats,
     start_date,
     end_date,
-    venue,
-    status,
     created_at,
     modified_at,
-    slug,
-    published,
-    guests_registered,
-    max_guests,
-    user,
     eventPage,
   } = props;
 
@@ -30,37 +33,53 @@ const Event = (props) => {
   const is_user = currentUser?.username === user;
 
   return (
-    <Card className="text-center">
-      <Card.Header>{category}</Card.Header>
+    <Card className={styles.Post}>
+      <Link to={`/events/${id}`}>
+        <Card.Header>
+          <Card.Title className="text-center">{title}</Card.Title>
+        </Card.Header>
+      </Link>
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>
-          <Link to={`/events/${id}`}>{excerpt}</Link>
-          <div></div>
-          <div className="d-flex align-items-center">
-            <span></span>
-            {is_user && eventPage && "..."}
-          </div>
-        </Card.Text>
-        {is_user ? (
-          <OverlayTrigger
-            placement="top"
-            overlay={<Tooltip>You can't book your own event!</Tooltip>}
-          ></OverlayTrigger>
-        ) : is_user ? (
-          <span onClick={() => {}}>Book icon</span>
-        ) : currentUser ? (
-          <span onClick={() => {}}>book icon</span>
-        ) : (
-          <OverlayTrigger
-            placement="top"
-            overlay={<Tooltip>Login to book events!</Tooltip>}
-          ></OverlayTrigger>
-        )}
-        <Button>cancel</Button>
-        <Button>Book</Button>
+        <Media className="align-items-center justify-content-between">
+          <Card.Text>
+            <p>{description}</p>
+            <div>
+              <span>
+                <i className="fas fa-map-marker-alt"></i>{" "}
+                <strong>{venue}</strong>
+              </span>
+              <span>
+                <i className="fas fa-calendar-week"></i>
+                <strong>{start_date}</strong> till <strong>{end_date}</strong>
+              </span>
+            </div>
+            <div>
+              <span>
+                <i className="fas fa-users"></i>
+                <strong>{max_guests}</strong>
+              </span>
+              <span>
+                Registered:<strong>{guests_registered}</strong>
+              </span>
+            </div>
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              // onClick={() => history.goBack()}
+            >
+              cancel
+            </Button>
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              type="submit"
+            >
+              book
+            </Button>
+          </Card.Text>
+        </Media>
       </Card.Body>
-      <Card.Footer className="text-muted">{created_at}</Card.Footer>
+      <Card.Footer className="d-flex align-items-center">
+        Created date: {created_at} modified date: {modified_at}
+      </Card.Footer>
     </Card>
   );
 };

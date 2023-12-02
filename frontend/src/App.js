@@ -41,7 +41,7 @@ function App() {
             render={() => (
               <PostsPage
                 message="No results found. Adjust the search keyword or follow a user."
-                filter={`user__followed__user__profile=${profile_id}`}
+                filter={`user__followed__user__profile=${profile_id}&`}
               />
             )}
           />
@@ -83,7 +83,7 @@ function App() {
               <EventsPage message="No results found. Adjust the search keyword." />
             )}
           />
-          <Route exact path="/events/:id" render={() => <Event />} />
+          <Route exact path="/events/:id" render={() => <EventPage />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>

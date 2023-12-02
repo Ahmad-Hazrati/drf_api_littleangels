@@ -14,8 +14,10 @@ class CategorySerializer(serializers.ModelSerializer):
 class EventSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source='user.username')
     is_user = serializers.SerializerMethodField()
-    # like_id = serializers.SerializerMethodField()
-    # likes_count = serializers.ReadOnlyField()
+    profile_id = serializers.ReadOnlyField(source='user.profile.id')
+    profile_image = serializers.ReadOnlyField(source='user.profile.image.url')
+    likes_count = serializers.ReadOnlyField()
+    comments_count = serializers.ReadOnlyField()
 
     def get_is_user(self, obj):
         request = self.context['request']
@@ -33,9 +35,9 @@ class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
         fields = (
-            'id', 'user', 'is_user', 'category', 'title', 'excerpt', 'description',
-            'venue', 'slug', 'published', 'status',
-            'max_guests', 'guests_registered', 'start_date', 'end_date',
-            'created_at', 'modified_at', 
-            # 'like_id', 'likes_count',
+            'id', 'user', 'is_user','profile_id', 'profile_image',
+            'title', 'excerpt', 'description', 'event_image', 'alt_tag',
+            'venue', 'published', 'status', 'eventobjects', 'max_seats', 
+            'registered_seats', 'available_seats', 'start_date', 'end_date',
+            'created_at', 'modified_at', 'likes_count', 'comments_count',
         )

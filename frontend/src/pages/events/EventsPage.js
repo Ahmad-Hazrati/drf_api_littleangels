@@ -19,7 +19,7 @@ function EventsPage({ message, filter = "" }) {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const { data } = await axiosReq(`/events/${filter}`);
+        const { data } = await axiosReq.get(`/events/${filter}`);
         setEvents(data);
         setHasLoaded(true);
       } catch (err) {
@@ -37,7 +37,9 @@ function EventsPage({ message, filter = "" }) {
         {hasLoaded ? (
           <>
             {events.results.length ? (
-              events.results.map((event) => <Event key={event.id} />)
+              events.results.map((event) => (
+                <Event key={event.id} {...event} setEvents={setEvents} />
+              ))
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />
@@ -46,7 +48,7 @@ function EventsPage({ message, filter = "" }) {
           </>
         ) : (
           <Container className={appStyles.Content}>
-           <Asset /> 
+            <Asset spinner />
           </Container>
         )}
       </Col>

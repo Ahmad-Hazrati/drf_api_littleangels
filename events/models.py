@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
+
 
 
 class Category(models.Model):
@@ -21,20 +23,19 @@ class Event(models.Model):
         ('published', 'Published'),
     )
 
-    category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
-    title = models.CharField(max_length=255, unique=True)
-    excerpt = models.TextField()
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
+    title = models.CharField(max_length=100)
+    excerpt = models.TextField(max_length=200, blank=True)
     description = models.TextField()
-    venue = models.CharField(max_length=150)
-    slug = models.SlugField(max_length=250, unique_for_date='published')
+    event_image = CloudinaryField("image", default="placeholder")
+    alt_tag = models.TextField(max_length=100)
+    venue = models.CharField(max_length=250)
     published = models.DateTimeField(default=timezone.now)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='event_post')
     status = models.CharField(max_length=10, choices = options, default='published')
-    objects = models.Manager()  # Default object manager
-    eventobjects = EventObjects()   # Custom object manager
-    max_guests = models.CharField(max_length=50)
-    guests_registered = models.ManyToManyField(
-        User, blank=True, related_name="events")
+    eventobjects = models.TextField() # Field for the guest to bring the required items with them in the event
+    max_seats = models.IntegerField()
+    registered_seats = models.IntegerField()
+    available_seats = models.BooleanField(default=True)
     start_date = models.DateTimeField(null=True)
     end_date = models.DateTimeField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -45,3 +46,8 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+    def check_availablte_seats(self, *args, **kwargs):
+        """Check the number of guests registered,
+        and set the already_registered"""
+        return self.max_seats == registered_seats
