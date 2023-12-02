@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
-from cloudinary.models import CloudinaryField
 
 
 
@@ -23,11 +22,29 @@ class Event(models.Model):
         ('published', 'Published'),
     )
 
+    image_filter_choices = [
+        ('1977', '1977'),
+        ('brannan', 'Brannan'),
+        ('earlybird', 'Earlybird'),
+        ('hudson', 'Hudson'),
+        ('inkwell', 'Inkwell'),
+        ('lofi', 'Lo-Fi'),
+        ('kelvin', 'Kelvin'),
+        ('normal', 'Normal'),
+        ('nashville', 'Nashville'),
+        ('rise', 'Rise'),
+        ('toaster', 'Toaster'),
+        ('valencia', 'Valencia'),
+        ('walden', 'Walden'),
+        ('xpro2', 'X-pro II')
+    ]
+
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
     title = models.CharField(max_length=100)
     excerpt = models.TextField(max_length=200, blank=True)
     description = models.TextField()
-    event_image = CloudinaryField("image", default="placeholder")
+    event_image = models.ImageField(upload_to='images/', default='../default_post_zmlkyd', blank=True)
+    image_filter = models.CharField(max_length=32, choices=image_filter_choices, default='normal')
     alt_tag = models.TextField(max_length=100)
     venue = models.CharField(max_length=250)
     published = models.DateTimeField(default=timezone.now)
