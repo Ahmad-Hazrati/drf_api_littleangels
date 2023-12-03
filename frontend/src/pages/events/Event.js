@@ -3,6 +3,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Media from "react-bootstrap/Media";
+import Alert from "react-bootstrap/Alert";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/Post.module.css";
@@ -51,43 +52,51 @@ const Event = (props) => {
           <div>
             <Card.Text>
               <p>{description}</p>
-              <div>
-                <span>
-                  <i className="fas fa-map-marker-alt"></i>{" "}
-                  <strong>{venue}</strong>
-                </span>
-                <span>
-                  <i className="fas fa-calendar-week"></i>
-                  <strong>{start_date}</strong> till <strong>{end_date}</strong>
-                </span>
+              <p>
+                <i className="fas fa-notes-medical"></i> {eventobjects}
+              </p>
+              <div className="">
+                <i className="fas fa-map-marker-alt"></i>{" "}
+                <strong>{venue}</strong>
               </div>
               <div>
-                <span>
-                  <i className="fas fa-users"></i>
-                  <strong>{max_guests}</strong>
-                </span>
-                <span>
-                  Registered:<strong>{guests_registered}</strong>
-                </span>
+                <i className="fas fa-calendar-week"></i>
+                <strong>{start_date}</strong> till <strong>{end_date}</strong>
               </div>
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.Blue}`}
-                // onClick={() => history.goBack()}
-              >
-                cancel
-              </Button>
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.Blue}`}
-                type="submit"
-              >
-                book
-              </Button>
+              <div>
+                <i className="fas fa-users"></i>
+                <strong>Max seats: {max_seats}</strong>
+                <i className="fas fa-chair"></i>
+                <strong>
+                  Booked seats: {registered_seats}
+                </strong>
+              </div>
+              {registered_seats !== max_seats ? (
+                <>
+                  <div>
+                    <Button
+                      className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                      // onClick={() => history.goBack()}
+                    >
+                      cancel
+                    </Button>
+                    <Button
+                      className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                      type="submit"
+                    >
+                      book
+                    </Button>
+                  </div>
+                </>
+              ) : (
+                <Alert variant="warning">All seats are fully booked!</Alert>
+              )}
             </Card.Text>
           </div>
         </Media>
       </Card.Body>
       <Card.Footer className="d-flex align-items-center">
-        Created date: {created_at} modified date: {modified_at}
+        Published date: {published}
       </Card.Footer>
     </Card>
   );
