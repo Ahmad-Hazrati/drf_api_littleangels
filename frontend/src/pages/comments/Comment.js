@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../../styles/Comment.module.css";
-import { Link } from "react-router-dom/cjs/react-router-dom";
+import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { Media } from "react-bootstrap";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";

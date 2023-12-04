@@ -7,7 +7,7 @@ class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, related_name='bookings', on_delete=models.CASCADE)
     number_of_people = models.IntegerField()
     add_to_guest = models.IntegerField(null=True)
     

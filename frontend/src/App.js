@@ -17,6 +17,7 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import EventPage from "./pages/events/EventPage";
 import EventsPage from "./pages/events/EventsPage";
+import Booking from "./pages/Bookings/Booking";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -82,6 +83,7 @@ function App() {
             )}
           />
           <Route exact path="/events/:id" render={() => <EventPage />} />
+          <Route exact path="/bookings/:id" render={() => <Booking />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
