@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import Category, Event
 from bookings.models import Booking
-# from likes.models import Like
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -19,7 +18,7 @@ class EventSerializer(serializers.ModelSerializer):
     profile_image = serializers.ReadOnlyField(source='user.profile.image.url')
     booking_id = serializers.SerializerMethodField()
     bookings_count = serializers.ReadOnlyField()
-    # comments_count = serializers.ReadOnlyField()
+    
 
     # def get_is_user(self, obj):
     #     request = self.context['request']

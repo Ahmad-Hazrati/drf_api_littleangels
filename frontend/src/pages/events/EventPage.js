@@ -8,10 +8,16 @@ import appStyles from "../../App.module.css";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import Event from "./Event";
+import BookingCreateForm from "../Bookings/BookingCreateForm";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function EventPage() {
   const { id } = useParams();
   const [event, setEvent] = useState({ results: [] });
+
+  const currentUser = useCurrentUser();
+  const profile_image = currentUser?.profile_image;
+  const [bookings, setBookings] = useState({ results: [] });
 
   useEffect(() => {
     const handleMount = async () => {
@@ -33,6 +39,19 @@ function EventPage() {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
         <Event {...event.results[0]} setEvents={setEvent} eventPage />
+        <Container className={appStyles.Content}>
+          {currentUser ? (
+            <BookingCreateForm
+              profile_id={currentUser.profile_id}
+              profileImage={profile_image}
+              event={id}
+              setEvent={setEvent}
+              setBookings={setBookings}
+            />
+          ) : bookings.results.length ? (
+            "bookings"
+          ) : null}
+        </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         Popular profiles for desktop

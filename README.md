@@ -1,14 +1,17 @@
 # Little Angels
+Little Angles is designed to be a social platform for the parents to get together and collaborate with each others. The primary goals of the web are to:
+1. Provide parents the ability to share the picture of their little ones with others and make it an unforgetable memory for themselves;
+2. Act as an hub for parents to get informed about the events and social activities and book one.
+3. Provide a simple and inituitive user experience for parents to use.
+4. Offers a minimal set of impactful features chosen in order to deliver a useful app within achieveable development timeframe, while laying a solid foundation for additional features in the future.
 
-This project is designed and developed to create a better user experience for the users/ parents. The users can register and log in to the site, view and post about their little angels, comment and like/unlike a post,  view published events and book an event and view the number of followers and  the events posted by the admin/community responsible person. The users are also able to register for events, like and comment on an event, and edit and delete their comments. The functionality of category & profile pages and search bar are also added for user convenience and better user experience.
+The site is showcasing Python (DRF framework), JavaScript (React library), HTML, CSS, Bootstrap, PostgreSQL database, Herokuapp, and Gitpod for Project Portfolio 5.
 
-The website is created for real-life situations but embedded with fictitious data for checking purposes. The site is showcasing Python (Django framework), JavaScript, HTML, CSS, Bootstrap, PostgreSQL database, Herokuapp, and Gitpod for Project Portfolio 4.
+And can be accessed by this [link.](https://drf-api-littleangels-f86db13e3ae5.herokuapp.com/)
 
-And can be accessed by this [link.](https://socialfun-9d543c215b26.herokuapp.com/)
+![Responsive Mockup Screenshot](/readme_assets/mockup.png)
 
-![Responsive Mockup Screenshot](/media/images/mockup.png)
-
-## Contents
+## Table of Contents
 <a name="contents"></a>
 
 - [UX](#ux)

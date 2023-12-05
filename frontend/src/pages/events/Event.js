@@ -40,30 +40,6 @@ const Event = (props) => {
     setEvents,
   } = props;
 
-  const currentUser = useCurrentUser();
-  const is_user = currentUser?.username === user;
-  const history = useHistory();
-
-  const handleBooking = async () => {
-    try {
-      const { data } = await axiosRes.post("/bookings/", { event: id });
-      setEvents((prevEvents) => ({
-        ...prevEvents,
-        results: prevEvents.results.map((event) => {
-          return event.id === id
-            ? {
-                ...event,
-                bookings_count: event.bookings_count + 1,
-                booking_id: data.id,
-              }
-            : event;
-        }),
-      }));
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   return (
     <Card className={styles.Post}>
       <Card.Header>
@@ -97,29 +73,6 @@ const Event = (props) => {
                 <i className="fas fa-chair"></i>
                 <strong>Booked seats: {registered_seats}</strong>
               </div>
-              {available_seats ? (
-                <>
-                  
-                  <div>
-                    <Button
-                      className={`${btnStyles.Button} ${btnStyles.Blue}`}
-                      // onClick={() => history.goBack()}
-                    >
-                      cancel
-                    </Button>
-                    <Button
-                      className={`${btnStyles.Button} ${btnStyles.Blue}`}
-                      type="submit"
-                      onClick={Booking}
-                    >
-                      book
-                    </Button>
-                  </div>
-                </>
-              ) : (
-                <Alert variant="warning">All seats are fully booked!</Alert>
-              )}
-              <p>Booking Count: {bookings_count}</p>
             </Card.Text>
           </div>
         </Media>

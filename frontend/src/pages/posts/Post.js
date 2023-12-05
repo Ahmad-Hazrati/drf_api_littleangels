@@ -85,7 +85,11 @@ const Post = (props) => {
             {is_user && postPage && (
               <MoreDropdown
                 handleEdit={handleEdit}
-                handleDelete={handleDelete}
+                handleDelete={() => {
+                  window.confirm(
+                    "Are you sure you want to delete this Post?"
+                  ) && handleDelete;
+                }}
               />
             )}
           </div>
