@@ -136,3 +136,35 @@ The objective of the site is to provide a social platform for all users especial
   *Handle Errors and Secure Sensitive Information*
   - To handle any potential errors appropriately and consistently.
   - To keep security-sensitive information hidden.
+
+### Scope
+#### Simple and intuitive User Experience
+ - Ensure the site title and logo provide first-hand information regarding the site;
+ - Ensure the navigation menu is visible and functional at every step;
+ - Ensure every page has a suggestive name/ icon that fits its content;
+ - Ensure the design matches the theme of the event and does not confuse the user.
+
+ #### Relevant content
+ - Add information about the post such as user, title, description, image and image_filter, created_at, modified_at;
+ - Add information about the event such as category, title, excerpt, description, event_image, alt_tag, venue, published, status, eventobjects, max_seats, registered_seats, start_date, end_date, created_at, modified_at;
+ - Create relevant navigation buttons for each section;
+ - Create a section for like/unlike, comments, booking, and profiles.
+
+ #### Features for upgraded experience
+- Create a scrolled list of posts and events that allows the user to view all oosts and events along with all their details;
+- Create a post detail page that allows users to update and delete the post, like/unlike the post, leave, edit, and delete comments;
+- Created an event detail page that allows users to book an event.
+- Created a like page that allows users to view the scrolled list of liked posts.
+- Created a feed page that allows users to view the scrolled list of followed and following profiles.
+- Created 
+- Create a profile page that allows the user to view and edit his profile content. The user can also view its number and scrolled list of its posts, number of followed user and number of following users ;
+- The search bar on the home page gives the user the ability to search for posts quickly and easily.
+
+#### Different account types for normal users and staff member/admin
+- User can perform CRUD operation on its posts, profile, comment, like, and booking;
+- User can view and book events while the admin can add, update, and delete events, and categories;
+- Participants have access only to their Profile page for managing it;
+- Staff members/ admin has access to the admin panel to manage events, comments, category, and both types of accounts.
+
+#### Responsiveness
+- Create a responsive design for desktop, tablet, and mobile devices.
