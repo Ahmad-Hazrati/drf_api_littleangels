@@ -120,9 +120,9 @@ The objective of the site is to provide a social platform for all users especial
     - Most followed profiles: As a user I can see a list of the most followed profiles so that I can see which profiles are popular
     - User profile - user stats: As a user I can view statistics about a specific user: bio, number of posts, follows and users followed so that I can learn more about them
     - Follow/Unfollow a user: As a logged in user I can follow and unfollow other users so that I can see and remove posts by specific users in my posts feed
-    - View all posts by a specific user: As a user I can view all the posts by a specific user so that I can catch up on their latest posts, or decide I want to follow them
-    - Edit profile: As a logged in user I can edit my profile so that I can change my profile picture and bio
-    - Update username and password: As a logged in user I can update my username and password so that I can change my display name and keep my profile secure
+    - View all posts by a specific user: As a user, I can view all the posts by a specific user so that I can catch up on their latest posts, or decide I want to follow them
+    - Edit profile: As a logged-in user I can edit my profile so that I can change my profile picture and bio
+    - Update username and password: As a logged-in user I can update my username and password so that I can change my display name and keep my profile secure
 <br>
 
 - **Site Administrator Goals**:
@@ -168,3 +168,18 @@ The objective of the site is to provide a social platform for all users especial
 
 #### Responsiveness
 - Create a responsive design for desktop, tablet, and mobile devices.
+
+### Structure
+It is a single-page website with different sections which navigate the user from one section to another seamlessly but the content depends on authentication and authorization of users.
+- **Register/Login** sections give the user the possibility to create an account and authenticate for accessing different features;
+- **Logout** feature is a modal that helps user to exit the site securely;
+- **Home** page is open and visible to all types of user irrespective of registeration and authorization and includes list of all posts;
+- **Post Detail** section is visible only to logged-in users and can be accessed by clicking on the post_image_url. It allows the user to read the details of the post, like/unlike a post, leave, edit, and delete a comment.
+- **Add Post** section is visible only to logged-in user and allows the user to add a new post;
+- **Event** section is visible only to logged-in user and allows the user to view the scrolled list of events;
+- **Event Detail** section is visible only to logged-in user and can be accessed by clicking on the event_image_url. It allows the user to read the details of the event, and book/unbook an event;
+- **Feed** section is visible only to logged-in user and allows the user to view the scrolled list of posts posted by the users followed or following him/her profile;
+- **Like** section is visible only to logged-in user and allows the user to view the scrolled list of posts liked by him/her;
+- **Profile** section is visible only to logged-in users and allows the user to view and update its contents. The user can also view its posted posts, the number of its posts, followers, and following profiles;
+- **The Admin Panel** page is visible only to staff members with admin rights/admin to manage the posts, events, comments, category, booking, profile, and user accounts.
+
