@@ -11,7 +11,7 @@ And can be accessed by this [link.](https://drf-api-littleangels-f86db13e3ae5.he
 
 ![Responsive Mockup Screenshot](/readme_assets/mockup.png)
 
-## Table of Contents
+## Contents
 <a name="contents"></a>
 
 - [UX](#ux)
@@ -193,3 +193,29 @@ PostgreSQL relational database is used to store the website data. The database m
   <summary>Database Schema</summary>
 <img src="readme_assets/entity_relationship_diagram.png"><br>
 </details>
+
+### Surface (Design)
+#### Color Scheme
+The clean and energetic color pallete is selected and used for the website back and text colors.
+![#color-pallete](/readme_assets/color-palette.png)
+- (#5680e9) color is used as hover and active color for links and icons. The color is also used for buttons.<br>
+![#5680e9](/readme_assets/5680e9.png)
+- (#84ceeb) is used as background color along with(#c1c8e4). It is also used as links and icons colors.<br>
+![#84ceeb](/readme_assets/84ceeb.png)
+- (#c1c8e4) is used as background color along with(#84ceeb).<br>
+![#84ceeb](/readme_assets/c1c8e4.png)
+- (#000) is used as the text color for the website.<br>
+![#000](/readme_assets/000.png)
+- (#FFFFFF) is used as the main background color for header and Cards.<br>
+![#FFF](/readme_assets/fff.png).<br>
+A few other limited colors are used as border and shading colors.
+
+#### Imagery
+- The website logo that describes the website's purpose is taken from [Zarla](https://www.zarla.com/).
+- The fictitious pictures used in the website are taken from [Pexcels](https://www.pexcels.com/).
+
+#### Typography
+- Poppins font is used as the main font for the website.<br>
+![Poppins](/readme_assets/poppins.png)
+<br><br>
+<a href="#contents">BACK TO CONTENTS 🔼</a>
