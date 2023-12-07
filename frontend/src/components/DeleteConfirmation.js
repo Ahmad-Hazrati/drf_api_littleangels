@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import btnStyles from "../styles/Button.module.css";
 
 function DeleteConfirmation() {
   const [show, setShow] = useState(false);
@@ -9,7 +10,8 @@ function DeleteConfirmation() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>Confirm
+      <Button variant="primary" onClick={handleShow}>
+        Confirm
       </Button>
 
       <Modal show={show} onHide={handleClose} animation={false}>
@@ -18,10 +20,16 @@ function DeleteConfirmation() {
         </Modal.Header>
         <Modal.Body>Are you sure, you want to delete this post?</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button
+            className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
+            onClick={handleClose}
+          >
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button
+            className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
+            onClick={handleClose}
+          >
             Yes
           </Button>
         </Modal.Footer>

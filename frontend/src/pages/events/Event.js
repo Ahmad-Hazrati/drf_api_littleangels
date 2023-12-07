@@ -9,6 +9,7 @@ import btnStyles from "../../styles/Button.module.css";
 import styles from "../../styles/Post.module.css";
 import { axiosRes } from "../../api/axiosDefaults";
 import Booking from "../Bookings/Booking";
+import DeleteConfirmation from "../../components/DeleteConfirmation";
 
 const Event = (props) => {
   const {

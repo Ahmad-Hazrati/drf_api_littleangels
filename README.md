@@ -183,3 +183,13 @@ It is a single-page website with different sections which navigate the user from
 - **Profile** section is visible only to logged-in users and allows the user to view and update its contents. The user can also view its posted posts, the number of its posts, followers, and following profiles;
 - **The Admin Panel** page is visible only to staff members with admin rights/admin to manage the posts, events, comments, category, booking, profile, and user accounts.
 
+### Skeleton
+#### Wireframes
+Wirefram is used to plan and sketch the website.
+
+#### Database
+PostgreSQL relational database is used to store the website data. The database model diagram is designed using [Miro](https://miro.com/).
+<details>
+  <summary>Database Schema</summary>
+<img src="readme_assets/entity_relationship_diagram.png"><br>
+</details>

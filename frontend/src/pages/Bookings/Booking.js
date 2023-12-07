@@ -1,5 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
+import Button from "react-bootstrap/Button";
+import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+
 
 const Booking = (props) => {
   const {
@@ -14,6 +17,9 @@ const Booking = (props) => {
     number_of_people,
     add_to_guest,
   } = props;
+
+  const history = useHistory();
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = async (booking) => {
     booking.preventDefault();
