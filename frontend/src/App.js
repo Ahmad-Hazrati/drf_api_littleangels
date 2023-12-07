@@ -17,7 +17,7 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import EventPage from "./pages/events/EventPage";
 import EventsPage from "./pages/events/EventsPage";
-import Booking from "./pages/Bookings/Booking";
+import Booking from "./pages/bookings/Booking";
 
 function App() {
   const currentUser = useCurrentUser();

@@ -36,9 +36,9 @@ class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
         fields = (
-            'id', 'profile_id', 'profile_image', 'title', 'excerpt', 
+            'id', 'profile_id', 'profile_image', 'title',
             'description', 'event_image','image_filter', 'alt_tag',
-            'venue', 'published', 'status', 'eventobjects', 'max_seats', 
-            'registered_seats', 'available_seats', 'start_date', 'end_date',
+            'venue', 'published', 'status', 'eventobjects', 
+            'start_date', 'end_date',
             'created_at', 'modified_at','booking_id', 'bookings_count',
         )

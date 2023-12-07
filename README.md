@@ -219,3 +219,80 @@ A few other limited colors are used as border and shading colors.
 ![Poppins](/readme_assets/poppins.png)
 <br><br>
 <a href="#contents">BACK TO CONTENTS 🔼</a>
+
+## Agile Methodology
+This project was developed using the Agile methodology.
+All user stories implementation progress was registered using [littleangels_project](https://github.com/users/Ahmad-Hazrati/projects/8/views/1). As the user stories were accomplished, they were moved from the kanban board **To Do**, to **Progress** and finally to **Done** lists.
+
+## Features 
+### Existing Features
+
+- __Home Page__ 
+  - When the website loads, the home page will load as well as the default page to all users whether authenticated or not. 
+  - The home page contains a scrolled list of all posts posted by the users. 
+  - The event's name, author, excerpt, image, date created, and number of likes are displayed on the home page. 
+  - If the user is authenticated then the event name and excerpt will be an active navigational link to the event detail page. 
+  ![Home Page](/media/images/home_page.png)<br><br>
+- __Event Detail Page__ 
+  - This page is only visible to authorized users and contains all details of the event. 
+  - The page also contains the event registeration link and comment sections. 
+  - The registeration button is visible in case the user has not yet registered to the event, otherwise, registeration confirmation message will be displayed.
+  - The user can leave, read, edit and delete comments. 
+  - The comments will be visible to other users once has been approved and published by the admin but can be seen, edited and deleted by the comments' owner.
+  ![Event Detail Page](/media/images/event_detail_page.png)<br><br>
+- __Event Registeration Page__
+  - This page is only visible to authorized user and contains the event details and registeration confirmation button. 
+  - The user has also the ability to go back to the event detail page by clicking the back button.
+  ![Event Detail Page](/media/images/event_registeration_page.png)<br><br>
+- __Category Page__ 
+  - The category page is only visible to authorized user and contains the list of all event related to selected category.
+  - The category page can be accessed from the navbar dropdown link and is dynamic. The category dropdown updates when a new category is added by the admin.
+  - The event in the category page is navigable and prompt the user to the event detail page once selected.
+  ![Category Page](/media/images/category_page.png)<br><br>
+- __Profile Page__ 
+  - The profile page is only visible to authorized user and comprises profile properties, an edit button, and the latest events created by the user.
+  - The user can edit their profile avatar and bio here.
+  ![Profile Page](/media/images/profile_page.png)<br><br>
+- __Logout Page__ 
+  - The logout page is only visible to authorized users and allows the user to logout securely from the website.
+  ![Logout Page](/media/images/logout_page.png)<br><br>
+- __Register Page__ 
+  - The register page is only visible to unauthorized users and allows the user to create an account and securely access the website.
+  - The page allows the user to fill out the form and sign up. The page includes a login button to navigate the user to login page in case already has an account.
+  ![Register Page](/media/images/register_page.png)<br><br>
+- __Login Page__ 
+  - The login page is only visible to unauthorized user and allows the user to log in and securely access the website.
+  - The page allows the user to fill out his/her username or email and password to log in. The page also comprises a register button to navigate the user to register page in case not have created an account yet.
+  ![Login Page](/media/images/login_page.png)<br><br>
+- __Builtin Admin Page__ 
+  - The builtin admin page is only visible to authorized user and allows the user with admin rights to log in and securely access the website administration panel.
+  - The page allows the admin to create, read, update and delete the contents of the event, comment, category and profile pages. 
+  ![Builtin Admin Page](/media/images/admin_page.png)<br><br>
+- __Base Page__ 
+  - This page is the base template that encompases the header and footer, css files, script files, links to external APIs and loads the contents to all other pages when is called.<br><br>
+
+### Features Left to Implement
+Initially, the idea was that the venue should be a separate model and user could create, edit and delete venue and event, but due to limited time couldn't implemented.
+Further features inclusive (cited above) to implement are:
+- another feature couldn't be that user could perform CRUD operations on events and venues from the profile page;
+- a review page will be a better feature to be added to the app.
+<br><br>
+<a href="#contents">BACK TO CONTENTS 🔼</a>
+
+## Technologies Used
+
+### Languages Used
+- **Python, JavaScript, HTML, and CSS** are used extensively during the project.
+- **Markdown**: Used exclusively for README.
+
+### Python Packages
+- **django**
+- **gunicorn**
+- **dj-database-URL**
+- **psycopg2**
+- **dj3-cloudinary-storage**
+- **whitenoise**
+- **jinja2**
+- **django-allauth**
+- **django-crispy-forms**
+- **autopep8**
