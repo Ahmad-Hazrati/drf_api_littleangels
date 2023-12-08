@@ -10,21 +10,24 @@ import {
 import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import { removeTokenTimestamp } from "../utils/utils";
 
-export default function NavBar() {
+const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
-  const {expanded, setExpanded, ref} = useClickOutsideToggle();
+  const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
+      removeTokenTimestamp();
     } catch (err) {
       console.log(err);
     }
   };
+
 
   const addPostIcon = (
     <NavLink
@@ -98,7 +101,7 @@ export default function NavBar() {
     >
       <Container>
         <NavLink to="/">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand>
             <img src={logo} alt="logo" height={75} />
           </Navbar.Brand>
         </NavLink>
@@ -125,3 +128,5 @@ export default function NavBar() {
     </Navbar>
   );
 }
+
+export default NavBar;
