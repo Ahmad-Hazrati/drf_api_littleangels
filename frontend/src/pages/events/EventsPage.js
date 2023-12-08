@@ -10,10 +10,12 @@ import Event from "./Event";
 import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
 import PopularProfiles from "../profiles/PopularProfiles";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function EventsPage({ message, filter = "" }) {
   const [events, setEvents] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -22,13 +24,12 @@ function EventsPage({ message, filter = "" }) {
         setEvents(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
       }
     };
 
     setHasLoaded(false);
     fetchEvents();
-  }, [filter]);
+  }, [filter, currentUser]);
 
   return (
     <Row className="h-100">

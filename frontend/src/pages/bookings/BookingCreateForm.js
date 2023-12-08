@@ -12,7 +12,6 @@ import Booking from "./Booking";
 const BookingCreateForm = (props) => {
   const { event, setEvent, setBookings } = props;
   const history = useHistory();
-  console.log('HEY')
 
   const handleBook = async (e) => {
     e.preventDefault();
@@ -32,7 +31,6 @@ const BookingCreateForm = (props) => {
         ],
       }));
     } catch (err) {
-      console.log(err);
     }
   };
 
