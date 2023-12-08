@@ -16,8 +16,6 @@ const Event = (props) => {
     eventobjects,
     start_date,
     end_date,
-    eventPage,
-    setEvents,
   } = props;
 
   return (

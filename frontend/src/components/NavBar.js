@@ -48,13 +48,6 @@ export default function NavBar() {
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
-        to="/bookings/create"
-      >
-        <i className="fas fa-calendar-plus"></i>Booking
-      </NavLink>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
         to="/feed"
       >
         <i className="fas fa-rss-square"></i>Feed

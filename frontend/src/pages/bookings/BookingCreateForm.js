@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
@@ -7,10 +7,12 @@ import Button from "react-bootstrap/Button";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useHistory } from "react-router-dom";
+import Booking from "./Booking";
 
 const BookingCreateForm = (props) => {
   const { event, setEvent, setBookings } = props;
   const history = useHistory();
+  console.log('HEY')
 
   const handleBook = async (e) => {
     e.preventDefault();
@@ -42,7 +44,8 @@ const BookingCreateForm = (props) => {
             >
               Back
             </Button>
-      {event.available_seats ? (
+      {(<Booking 
+      available_seats= {event.available_seats} />) ? (
         <>
           <div>
       

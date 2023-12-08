@@ -11,6 +11,7 @@ import Event from "./Event";
 import BookingCreateForm from "../bookings/BookingCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import PopularProfiles from "../profiles/PopularProfiles";
+import Booking from "../bookings/Booking";
 
 function EventPage() {
   const { id } = useParams();
@@ -23,7 +24,7 @@ function EventPage() {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const [{ data: event }, {data: bookings}] = await Promise.all([
+        const [{ data: event }, { data: bookings }] = await Promise.all([
           axiosReq.get(`/events/${id}`),
           axiosReq.get(`/bookings/?event=${id}`),
         ]);
@@ -53,6 +54,20 @@ function EventPage() {
           ) : bookings.results.length ? (
             "Bookings"
           ) : null}
+          {bookings.results.length ? (
+            bookings.results.map((booking) => (
+              <Booking
+                key={booking.id}
+                {...booking}
+                setEvent={setEvent}
+                setBookings={setBookings}
+              />
+            ))
+          ) : currentUser ? (
+            <span>No bookings yet, be the first to book!</span>
+          ) : (
+            <span>No booking... yet</span>
+          )}
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
