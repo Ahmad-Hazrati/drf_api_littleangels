@@ -146,12 +146,12 @@ The objective of the site is to provide a social platform for all users especial
 
  #### Relevant content
  - Add information about the post such as user, title, description, image and image_filter, created_at, modified_at;
- - Add information about the event such as category, title, excerpt, description, event_image, alt_tag, venue, published, status, eventobjects, max_seats, registered_seats, start_date, end_date, created_at, modified_at;
+ - Add information about the event such as category, title, description, event_image, alt_tag, venue, published, status, eventobjects, start_date, end_date, created_at, modified_at;
  - Create relevant navigation buttons for each section;
  - Create a section for like/unlike, comments, booking, and profiles.
 
  #### Features for upgraded experience
-- Create a scrolled list of posts and events that allows the user to view all oosts and events along with all their details;
+- Create a scrolled list of posts and events that allows the user to view all posts and events along with all their details;
 - Create a post detail page that allows users to update and delete the post, like/unlike the post, leave, edit, and delete comments;
 - Created an event detail page that allows users to book an event.
 - Created a like page that allows users to view the scrolled list of liked posts.
@@ -191,7 +191,7 @@ Wirefram is used to plan and sketch the website.
 PostgreSQL relational database is used to store the website data. The database model diagram is designed using [Miro](https://miro.com/).
 <details>
   <summary>Database Schema</summary>
-<img src="readme_assets/entity_relationship_diagram.png"><br>
+<img src="readme_assets/entitiy_relationship_diagram.jpg"><br>
 </details>
 
 ### Surface (Design)
@@ -226,53 +226,77 @@ All user stories implementation progress was registered using [littleangels_proj
 
 ## Features 
 ### Existing Features
-
 - __Home Page__ 
   - When the website loads, the home page will load as well as the default page to all users whether authenticated or not. 
-  - The home page contains a scrolled list of all posts posted by the users. 
-  - The event's name, author, excerpt, image, date created, and number of likes are displayed on the home page. 
-  - If the user is authenticated then the event name and excerpt will be an active navigational link to the event detail page. 
-  ![Home Page](/media/images/home_page.png)<br><br>
-- __Event Detail Page__ 
-  - This page is only visible to authorized users and contains all details of the event. 
-  - The page also contains the event registeration link and comment sections. 
-  - The registeration button is visible in case the user has not yet registered to the event, otherwise, registeration confirmation message will be displayed.
-  - The user can leave, read, edit and delete comments. 
-  - The comments will be visible to other users once has been approved and published by the admin but can be seen, edited and deleted by the comments' owner.
-  ![Event Detail Page](/media/images/event_detail_page.png)<br><br>
-- __Event Registeration Page__
-  - This page is only visible to authorized user and contains the event details and registeration confirmation button. 
-  - The user has also the ability to go back to the event detail page by clicking the back button.
-  ![Event Detail Page](/media/images/event_registeration_page.png)<br><br>
-- __Category Page__ 
-  - The category page is only visible to authorized user and contains the list of all event related to selected category.
-  - The category page can be accessed from the navbar dropdown link and is dynamic. The category dropdown updates when a new category is added by the admin.
-  - The event in the category page is navigable and prompt the user to the event detail page once selected.
-  ![Category Page](/media/images/category_page.png)<br><br>
-- __Profile Page__ 
-  - The profile page is only visible to authorized user and comprises profile properties, an edit button, and the latest events created by the user.
-  - The user can edit their profile avatar and bio here.
-  ![Profile Page](/media/images/profile_page.png)<br><br>
-- __Logout Page__ 
-  - The logout page is only visible to authorized users and allows the user to logout securely from the website.
-  ![Logout Page](/media/images/logout_page.png)<br><br>
-- __Register Page__ 
-  - The register page is only visible to unauthorized users and allows the user to create an account and securely access the website.
-  - The page allows the user to fill out the form and sign up. The page includes a login button to navigate the user to login page in case already has an account.
-  ![Register Page](/media/images/register_page.png)<br><br>
-- __Login Page__ 
-  - The login page is only visible to unauthorized user and allows the user to log in and securely access the website.
-  - The page allows the user to fill out his/her username or email and password to log in. The page also comprises a register button to navigate the user to register page in case not have created an account yet.
-  ![Login Page](/media/images/login_page.png)<br><br>
-- __Builtin Admin Page__ 
-  - The builtin admin page is only visible to authorized user and allows the user with admin rights to log in and securely access the website administration panel.
-  - The page allows the admin to create, read, update and delete the contents of the event, comment, category and profile pages. 
-  ![Builtin Admin Page](/media/images/admin_page.png)<br><br>
-- __Base Page__ 
-  - This page is the base template that encompases the header and footer, css files, script files, links to external APIs and loads the contents to all other pages when is called.<br><br>
+  - The home page contains the most followed profiles, a search bar, and a scrolled list of all posts posted by the users. 
+  - The user name, number of posts, number of followers, and number of followed users are displayed on the page.
+  - The search bar will display a filtered scrolled list of posts based on the user inputs.
+  - The post's title, description, image, date created, number of likes, and number of comments are displayed on the home page. 
+  - The post image acts as an active navigational link to the post detail section.
+  ![Home](/readme_assets/home.png)<br><br>
+- __Post detail__ 
+  - This section is visible to all users and contains all details of the post including like/unlike and comment functionalities. 
+  - If the user is not logged in then s/he is restricted and alerted to log in to use like/unlike or comment functionalities otherwise, can only view the number of likes and comments.
+  - If the user is logged in and is the owner of the like then s/he can like/unlike the post and edit or delete his/her comments.
+  - If the user is logged in and is the owner of the comment then s/he can edit and delete the comment through a dropdown menu.
+  ![Post detail](/readme_assets/post_detail.png)<br><br>
+- __Add post__
+  - This section is only visible to authenticated users and users can add a post.
+  - The section contains an image field, 2 input fields, and 2 buttons.
+  - To increase the page loading speed and utilize the hosting file server space effectively the image size is controlled and the user cannot upload an image exceeding 2MB, 4096px in width or height. 
+  ![Add post section](/readme_assets/add_post.png)<br><br>
+- __Event__ 
+  - The event section is only visible to authenticated users and contains the scrolled list of all events.
+  - The event creation is maintained by the site admin.
+  - The event section contains the most followed profiles and a scrolled list of all events posted by the user with admin rights from the admin panel. 
+  - The event's title, image, description, event objects, venue, start date, end_date and published date areare displayed in this section. 
+  - The event image acts as an active navigational link to the event detail section.
+  ![Home](/readme_assets/event.png)<br><br>
+- __Event detail__ 
+  - This section is only visible to authenticated users and contains all details of the event including booking functionality. 
+  - The user can book the event by clicking the book button.
+  - If the user is the owner of the booking then s/he can delete his/her bookings through a drop down menu.
+  ![Post detail](/readme_assets/event_detail.png)<br><br>
+  - __Feed__ 
+  - The feed section is visible to authenticated users.
+  - This section contains the most followed profiles, a search bar, and a scrolled list of posts posted by the user followed by the current user logged in. 
+  - The user name, number of posts, number of followers, and number of followed users are displayed on the page.
+  - The search bar will display a filtered scrolled list of posts based on the user inputs.
+  - The post's title, description, image, date created, number of likes, and number of comments are displayed in this section. 
+  ![Home](/readme_assets/feed.png)<br><br>
+  - __Like__ 
+  - The like section is visible to authenticated users.
+  - This section contains the most followed profiles, a search bar, and a scrolled list of posts liked by the current user logged in. 
+  - The user name, number of posts, number of followers, and number of followed users are displayed on the page.
+  - The search bar will display a filtered scrolled list of posts based on the user inputs.
+  - The post's title, description, image, date created, number of likes, and number of comments are displayed in this section. 
+  ![Home](/readme_assets/liked.png)<br><br>
+- __Profile__ 
+  The profile section is visible to authenticated users.
+  - This section contains the most followed profiles, current user profile details, and a scrolled list of posts posted by the current user logged in. 
+  - The user name, number of posts, number of followers, and number of followed users are displayed on the page.
+  - The user can edit his profile, change the username, and change the password by clicking the dropdown menu.
+  ![Profile](/readme_assets/profile.png)<br><br>
+- __Signout__ 
+  - The signout section is only visible to logged-in users and allows the user to log out securely from the website.
+  - When the user clicks the sign out button, he securely logged-out and the home page loads.
+  ![Signout](/readme_assets/signout.png)<br><br>
+- __Signup__ 
+  - The sign up section is visible to unauthenticated users and allows the user to create an account and securely access the website.
+  - This allows the user to fill out the form and sign up. It includes a login button to navigate the user to login section in case already has an account.
+  ![Signup](/readme_assets/signup.png)<br><br>
+- __Signin__ 
+  - The login section is visible to unathenticated users and allows the user to sign in and securely access the website.
+  - The page allows the user to fill out his/her username and password to sign in. It also comprises a signup button to navigate the user to signup section in case not have created an account yet.
+  ![Login](/readme_assets/signin.png)<br><br>
+- __Builtin Admin Panel__ 
+  - The builtin admin panel is only visible to authorized user and allows the user with admin rights to log in and securely access the website administration panel.
+  - The page allows the admin to create, read, update and delete the contents of the event, and category. 
+  ![Builtin Admin Panel](/readme_assets/admin_panel.png)<br><br>
+
 
 ### Features Left to Implement
-Initially, the idea was that the venue should be a separate model and user could create, edit and delete venue and event, but due to limited time couldn't implemented.
+Initially, the idea was that the venue should be a separate model and users could create, edit, and delete venues and events, but due to limited time couldn't implemented.
 Further features inclusive (cited above) to implement are:
 - another feature couldn't be that user could perform CRUD operations on events and venues from the profile page;
 - a review page will be a better feature to be added to the app.
