@@ -38,6 +38,7 @@ And can be accessed by this [link.](https://drf-api-littleangels-f86db13e3ae5.he
 - [Technologies Used](#technologies-used)
   - [Languages Used](#languages-used)
   - [Python Packages](#python-packages)
+  - [JavaScript Packages](#javascript-packages)
   - [Programs Used](#programs-used)
 - [Testing](#testing)
   - [Google Chrome Lighthouse](#google-chrome-lighthouse)
@@ -296,27 +297,62 @@ All user stories implementation progress was registered using [littleangels_proj
 
 
 ### Features Left to Implement
-Initially, the idea was that the venue should be a separate model and users could create, edit, and delete venues and events, but due to limited time couldn't implemented.
+Initially, the idea was that the event section should have like functionality same as the post section. The booking of the event should be based on the number of seats available and one user could book only one seat but due to limited time constraints couldn't implemented.
 Further features inclusive (cited above) to implement are:
-- another feature couldn't be that user could perform CRUD operations on events and venues from the profile page;
+- Another feature to add could be a chat functionality. 
 - a review page will be a better feature to be added to the app.
 <br><br>
 <a href="#contents">BACK TO CONTENTS 🔼</a>
 
 ## Technologies Used
-
 ### Languages Used
-- **Python, JavaScript, HTML, and CSS** are used extensively during the project.
+- **Python (Rest Framework), JavaScript (React Library), HTML, and CSS** are used extensively during the project.
 - **Markdown**: Used exclusively for README.
 
 ### Python Packages
 - **django**
-- **gunicorn**
-- **dj-database-URL**
-- **psycopg2**
-- **dj3-cloudinary-storage**
-- **whitenoise**
-- **jinja2**
+- **djangorestframework**
 - **django-allauth**
-- **django-crispy-forms**
+- **django-filter**
+- **Pillow**
+- **gunicorn**
+- **psycopg2**
+- **PyJWT**
+- **dj-cloudinary-storage**
+- **whitenoise**
 - **autopep8**
+
+### JavaScript Packages
+- **react**
+- **react-dom**
+- **axios**
+- **react-scripts**
+- **jwt-decode**
+- **react-bootstrap**
+- **react-infinite-scorll-component**
+
+### Programs Used
+[React-Bootstrap4](https://react-bootstrap-v4.netlify.app/): used to add predefined styled elements and responsiveness.<br>
+[Git](https://git-scm.com/): used for version control.<br>
+[GitHub](https://github.com/): used to host the source code of the program.<br>
+[Gitpod](https://gitpod.io/): used to write and test the code.<br>
+[Heroku](https://dashboard.heroku.com/): used to deploy the project.<br>
+[Cloudinary](https://cloudinary.com/): used to store static files.<br>
+[PostgreSQL](https://www.elephantsql.com/): used to store the website data.<br>
+[Balsamiq](https://balsamiq.com/wireframes/): used to sketch the project contents.<br>
+[Miro](https://miro.com/): used to design the database model.<br>
+[iLoveIMG](https://www.iloveimg.com/): used to crop and compress the images.<br>
+[Zarla](https://www.zarla.com/): used to generate the website favicon and logo.<br>
+[Font Awesome](https://fontawesome.com/): used for creating attractive UX with icons.<br>
+[Google Fonts](https://fonts.google.com/): used for project typography.<br>
+[JsHint](https://jshint.com/): used to validate the scripts.<br>
+[CI Python Linter](https://pep8ci.herokuapp.com/#/): used to perform check of Python code.<br>
+[HTML - W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options): used to valid the HTML pages.<br>
+[CSS - Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri): used to valid the CSS.<br>
+[Chrome Developer Tools](https://developer.chrome.com/docs/devtools/): used for project debugging purpose.<br>
+[React Developer Tools](https://chromewebstore.google.com/detail/fmkadmapgofadopljbjfkapdkoienihi): used for project debugging purpose.<br>
+[Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=de): used to test the website performance, accessibility, best practices and SEO.<br>
+[W.A.V.E.](https://wave.webaim.org/): used for testing accessibility.<br>
+[Pexels](https://www.pexels.com/): used to generate the website images.<br>
+[Color-HEX](https://www.color-hex.com): used to generate the webiste colors.<br>
+<br><a href="#contents">BACK TO CONTENTS 🔼</a>
