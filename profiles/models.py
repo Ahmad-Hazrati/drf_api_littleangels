@@ -11,12 +11,11 @@ class Profile(models.Model):
     bio = models.TextField(blank=True)
     interests = models.CharField(max_length=255, blank=True)
     image = models.ImageField(
-        upload_to = 'images/', default='../default_profile_mlzeil', blank=True
+        upload_to='images/', default='../default_profile_mlzeil', blank=True
     )
 
     class Meta:
         ordering = ['-created_at']
-
 
     def __str__(self):
         return f"{self.user}'s profile"
@@ -25,5 +24,6 @@ class Profile(models.Model):
 def create_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
+
 
 post_save.connect(create_profile, sender=User)

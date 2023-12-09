@@ -5,12 +5,13 @@ from drf_api_littleangels.permissions import IsOwnerOrReadOnly
 from .models import Post
 from .serializers import PostSerializer
 
+
 class PostList(generics.ListCreateAPIView):
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Post.objects.annotate(
-        likes_count = Count('likes', distinct=True),
-        comments_count = Count('comment', distinct=True)
+        likes_count=Count('likes', distinct=True),
+        comments_count=Count('comment', distinct=True)
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
@@ -39,6 +40,6 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = PostSerializer
     queryset = Post.objects.annotate(
-        likes_count = Count('likes', distinct=True),
-        comments_count = Count('comment', distinct=True)
+        likes_count=Count('likes', distinct=True),
+        comments_count=Count('comment', distinct=True)
     ).order_by('-created_at')

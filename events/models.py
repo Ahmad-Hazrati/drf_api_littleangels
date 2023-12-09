@@ -41,7 +41,6 @@ class Event(models.Model):
 
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
     title = models.CharField(max_length=100)
-    # excerpt = models.TextField(max_length=200, blank=True)
     description = models.TextField()
     event_image = models.ImageField(upload_to='images/', default='../default_post_zmlkyd', blank=True)
     image_filter = models.CharField(max_length=32, choices=image_filter_choices, default='normal')
@@ -49,9 +48,8 @@ class Event(models.Model):
     venue = models.CharField(max_length=250)
     published = models.DateTimeField(default=timezone.now)
     status = models.CharField(max_length=10, choices = options, default='published')
-    eventobjects = models.TextField() # Field for the guest to bring the required items with them in the event
-    # max_seats = models.IntegerField()
-    # registered_seats = models.IntegerField()
+    # Field for the guest to bring the required items with them in the event
+    eventobjects = models.TextField() 
     available_seats = models.BooleanField(default=True)
     start_date = models.DateTimeField(null=True)
     end_date = models.DateTimeField(null=True)
@@ -63,8 +61,3 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
-
-    # def check_availablte_seats(self, *args, **kwargs):
-    #     """Check the number of guests registered,
-    #     and set the already_registered"""
-    #     return self.max_seats == registered_seats

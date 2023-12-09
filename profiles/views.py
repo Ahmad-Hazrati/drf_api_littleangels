@@ -8,9 +8,9 @@ from .serializers import ProfileSerializer
 
 class ProfileList(generics.ListAPIView):
     queryset = Profile.objects.annotate(
-        posts_count = Count('user__post', distinct=True),
-        followers_count = Count('user__followed', distinct=True),
-        following_count = Count('user__following', distinct=True)
+        posts_count=Count('user__post', distinct=True),
+        followers_count=Count('user__followed', distinct=True),
+        following_count=Count('user__following', distinct=True)
     ).order_by('-created_at')
     serializer_class = ProfileSerializer
     filter_backends = [
@@ -32,9 +32,9 @@ class ProfileList(generics.ListAPIView):
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
     queryset = Profile.objects.annotate(
-        posts_count = Count('user__post', distinct=True),
-        followers_count = Count('user__followed', distinct=True),
-        following_count = Count('user__following', distinct=True)
+        posts_count=Count('user__post', distinct=True),
+        followers_count=Count('user__followed', distinct=True),
+        following_count=Count('user__following', distinct=True)
     ).order_by('-created_at')
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = ProfileSerializer

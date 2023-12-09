@@ -26,7 +26,7 @@ class PostSerializer(serializers.ModelSerializer):
         if value.image.height > 4096:
             raise serializers.ValidationError(
                 'Image height is larger than 4096px!'
-                )       
+                )
         return value
 
     def get_is_user(self, obj):
@@ -47,5 +47,6 @@ class PostSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'user', 'is_user', 'profile_id', 'profile_image',
             'created_at', 'modified_at', 'title', 'description',
-            'image', 'image_filter', 'like_id', 'likes_count', 'comments_count',
+            'image', 'image_filter', 'like_id', 'likes_count',
+            'comments_count',
         ]

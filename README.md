@@ -351,8 +351,93 @@ Further features inclusive (cited above) to implement are:
 [CSS - Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri): used to valid the CSS.<br>
 [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/): used for project debugging purpose.<br>
 [React Developer Tools](https://chromewebstore.google.com/detail/fmkadmapgofadopljbjfkapdkoienihi): used for project debugging purpose.<br>
-[Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=de): used to test the website performance, accessibility, best practices and SEO.<br>
+[Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=de): used to test the website performance, accessibility, best practices, and SEO.<br>
 [W.A.V.E.](https://wave.webaim.org/): used for testing accessibility.<br>
 [Pexels](https://www.pexels.com/): used to generate the website images.<br>
 [Color-HEX](https://www.color-hex.com): used to generate the webiste colors.<br>
 <br><a href="#contents">BACK TO CONTENTS 🔼</a>
+
+## Testing 
+Testing has taken place continuously throughout the development of the project. Each section, function and component was tested regularly. When the outcome was not as expected, debugging took place at that point.
+
+### Google Chrome Lighthouse
+Google Chrome lighthouse checks and generates a comprehensive report regarding the website's performance, accessibility, best practices, and SEO.
+![Lighthouse Report](/readme_assets/lighthouse.png)
+
+
+### Validator Testing 
+#### Python Validator - PEP8
+- Python testing was done using the PEP8 Online to ensure there were no syntax errors in the project. All python files were entered into the online checker and no errors were found in any of the custom codes.
+**Event admin.py** : No errors or warnings to show.
+![Event admin.py PEP8](/media/images/pep8_event_admin.png)
+**Event app.py** : No errors or warnings to show.
+![Event app.py PEP8](/media/images/pep8_event_app.png)
+**Event context_processor.py** : No errors or warnings to show.
+![Event context_processor.py PEP8](/media/images/pep8_event_context_processor.png)
+**Event forms.py** : No errors or warnings to show.
+![Event forms.py PEP8](/media/images/pep8_event_forms.png)
+**Event models.py** : No errors or warnings to show.
+![Event models.py PEP8](/media/images/pep8_event_models.png)
+**Event urls.py** : No errors or warnings to show.
+![Event urls.py PEP8](/media/images/pep8_event_urls.png)
+**Event views.py** : No errors or warnings to show.
+![Event views.py PEP8](/media/images/pep8_event_views.png)
+**Profile admin.py** : No errors or warnings to show.
+![profile admin.py PEP8](/media/images/pep8_profile_admin.png)
+**Profile apps.py** : No errors or warnings to show.
+![profile apps.py PEP8](/media/images/pep8_profile_apps.png)
+**Profile forms.py** : No errors or warnings to show.
+![profile forms.py PEP8](/media/images/pep8_profile_forms.png)
+**Profile models.py** : No errors or warnings to show.
+![profile models.py PEP8](/media/images/pep8_profile_models.png)
+**Profile urls.py** : No errors or warnings to show.
+![profile urls.py PEP8](/media/images/pep8_profile_urls.png)
+**Profile views.py** : No errors or warnings to show.
+![profile views.py PEP8](/media/images/pep8_profile_views.png)
+**Socialfun settings.py** : No errors or warnings to show.
+![profile settings.py PEP8](/media/images/pep8_socialfun_settings.png)
+**Socialfun urls.py** : No errors or warnings to show.
+![profile urls.py PEP8](/media/images/pep8_socialfun_urls.png)
+**Socialfun wsgi.py** : No errors or warnings to show.
+![profile wsgi.py PEP8](/media/images/pep8_socialfun_wsgi.png)
+
+
+#### HTML W3C Validator
+As this is a Django project, the HTML couldn't be tested via the site's URL, due to Django tags and Jinja templating language in HTML files. Instead, the source code of each page was pasted into the validator directly.<br>
+**Home Page**: No errors or warnings to show.
+![Home Page](/media/images/w3c_validator_home_page.png)<br><br>
+**Event Detail Page**: 4 errors are returned.
+![Event Detail Page](/media/images/w3c_validator_event_detail_page.png)
+**Fix**:
+- 1. Change the **p** element into **div** element as the validator did not read the closing **p** element.<br>
+- 2. Remove the <strong> element.
+- 3. Add a data attribute to the comment_id of Delete button.
+- 4. Add a data attribute to the comment_id of Edit button.<br><br>
+**Event Registration Page**: No errors or warnings to show.
+![Event Registration Page](/media/images/w3c_validator_event_registeration_page.png)
+**Fix**:
+- 1. Change the **p** element into **div** element as the validator did not read the closing **p** element.<br><br>
+**Category Page**: No errors or warnings to show.
+![Category Page](/media/images/w3c_validator_category_page.png)<br><br>
+**Profile Page**: No errors or warnings to show.
+![Profile Page](/media/images/w3c_validator_profile_page.png)<br><br>
+**Logout Page**: No errors or warnings to show.
+![Logout Page](/media/images/w3c_validator_logout_page.png)<br><br>
+**Register Page**: No errors or warnings to show.
+![Register Page](/media/images/w3c_validator_register_page.png)
+**Fix**:
+- 1. The fix was not possible as the file was not accessible for edit.
+<br><br>
+
+**Login Page**: No errors or warnings to show.
+![Login Page](/media/images/w3c_validator_login_page.png)<br><br>
+
+#### CSS Jigsaw Validator
+No errors were found when passing through the official W3C CSS.
+![STYLE CSS](/media/images/jigsaw_css_validator.png)
+
+
+#### Jshint Validator
+No errors were found when passing through the JSHint.
+  ![JSHint validator comments.js](/media/images/jshint_comments.png)
+  ![JSHint validator message_box](/media/images/jshint_message_box.png)

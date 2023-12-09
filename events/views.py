@@ -15,23 +15,16 @@ class EventList(generics.ListCreateAPIView):
     serializer_class = EventSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Event.objects.annotate(
-        booking_count = Count('bookings', distinct=True),
+        booking_count=Count('bookings', distinct=True),
     ).order_by('-created_at')
-    
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
-
-
-# class EventCreate(generics.CreateAPIView):
-#     serializer_class = EventSerializer
-#     permission_classes = [IsOwnerOrReadOnly]
-#     queryset = Event.objects.all()
 
 
 class EventDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = EventSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Event.objects.annotate(
-        booking_count = Count('bookings', distinct=True),
+        booking_count=Count('bookings', distinct=True),
     ).order_by('-created_at')
