@@ -367,74 +367,149 @@ Google Chrome lighthouse checks and generates a comprehensive report regarding t
 
 ### Validator Testing 
 #### Python Validator - PEP8
-- Python testing was done using the PEP8 Online to ensure there were no syntax errors in the project. All python files were entered into the online checker and no errors were found in any of the custom codes.
-**Event admin.py** : No errors or warnings to show.
-![Event admin.py PEP8](/media/images/pep8_event_admin.png)
-**Event app.py** : No errors or warnings to show.
-![Event app.py PEP8](/media/images/pep8_event_app.png)
-**Event context_processor.py** : No errors or warnings to show.
-![Event context_processor.py PEP8](/media/images/pep8_event_context_processor.png)
-**Event forms.py** : No errors or warnings to show.
-![Event forms.py PEP8](/media/images/pep8_event_forms.png)
-**Event models.py** : No errors or warnings to show.
-![Event models.py PEP8](/media/images/pep8_event_models.png)
-**Event urls.py** : No errors or warnings to show.
-![Event urls.py PEP8](/media/images/pep8_event_urls.png)
-**Event views.py** : No errors or warnings to show.
-![Event views.py PEP8](/media/images/pep8_event_views.png)
-**Profile admin.py** : No errors or warnings to show.
-![profile admin.py PEP8](/media/images/pep8_profile_admin.png)
-**Profile apps.py** : No errors or warnings to show.
-![profile apps.py PEP8](/media/images/pep8_profile_apps.png)
-**Profile forms.py** : No errors or warnings to show.
-![profile forms.py PEP8](/media/images/pep8_profile_forms.png)
-**Profile models.py** : No errors or warnings to show.
-![profile models.py PEP8](/media/images/pep8_profile_models.png)
-**Profile urls.py** : No errors or warnings to show.
-![profile urls.py PEP8](/media/images/pep8_profile_urls.png)
-**Profile views.py** : No errors or warnings to show.
-![profile views.py PEP8](/media/images/pep8_profile_views.png)
-**Socialfun settings.py** : No errors or warnings to show.
-![profile settings.py PEP8](/media/images/pep8_socialfun_settings.png)
-**Socialfun urls.py** : No errors or warnings to show.
-![profile urls.py PEP8](/media/images/pep8_socialfun_urls.png)
-**Socialfun wsgi.py** : No errors or warnings to show.
-![profile wsgi.py PEP8](/media/images/pep8_socialfun_wsgi.png)
+- Python testing was done using the PEP8 Online to ensure there were no syntax errors in the project. All python files were entered into the online checker and no errors were found in any of the custom codes.<br>
+- **bookings app** <br>
+**bookings admin.py** : No errors or warnings to show.<br>
+![bookings admin.py PEP8](/readme_assets/bookings_admin.png)<br>
+**bookings apps.py** : No errors or warnings to show.<br>
+![bookings apps.py PEP8](/readme_assets/bookings_apps.png)<br>
+**bookings models.py** : No errors or warnings to show.<br>
+![bookings models.py PEP8](/readme_assets/bookings_models.png)<br>
+**bookings serializers.py** : No errors or warnings to show.<br>
+![bookings serializers.py PEP8](/readme_assets/bookings_serializers.png)<br>
+**bookings tests.py** : No errors or warnings to show.<br>
+![bookings tests.py PEP8](/readme_assets/bookings_tests.png)<br>
+**bookings urls.py** : No errors or warnings to show.<br>
+![bookings urls.py PEP8](/readme_assets/bookings_urls.png)<br>
+**bookings views.py** : No errors or warnings to show.<br>
+![bookings views.py PEP8](/readme_assets/bookings_views.png)<br>
+**bookings admin.py** : No errors or warnings to show.<br>
+![bookings admin.py PEP8](/readme_assets/bookings_admin.png)<br>
 
+- **comments app** <br>
+**comments admin.py** : No errors or warnings to show.<br>
+![comments admin.py PEP8](/readme_assets/comments_admin.png)<br>
+**comments apps.py** : No errors or warnings to show.<br>
+![comments apps.py PEP8](/readme_assets/comments_apps.png)<br>
+**comments models.py** : No errors or warnings to show.<br>
+![comments models.py PEP8](/readme_assets/comments_models.png)<br>
+**comments serializers.py** : No errors or warnings to show.<br>
+![comments serializers.py PEP8](/readme_assets/comments_serializers.png)<br>
+**comments tests.py** : No errors or warnings to show.<br>
+![comments tests.py PEP8](/readme_assets/comments_tests.png)<br>
+**comments urls.py** : No errors or warnings to show.<br>
+![comments urls.py PEP8](/readme_assets/comments_urls.png)<br>
+**comments views.py** : No errors or warnings to show.<br>
+![comments views.py PEP8](/readme_assets/comments_views.png)<br>
+
+- **drf_api_littleangels**<br>
+**drf_api asgi.py** : No errors or warnings to show.<br>
+![drf_api asgi.py PEP8](/readme_assets/drf_api_asgi.png)<br>
+**drf_api permissions.py** : No errors or warnings to show.<br>
+![drf_api permissions.py PEP8](/readme_assets/drf_api_permissions.png)<br>
+**drf_api serializers.py** : No errors or warnings to show.<br>
+![drf_api serializers.py PEP8](/readme_assets/drf_api_serializers.png)<br>
+**drf_api settings.py** : No errors or warnings to show.<br>
+![drf_api settings.py PEP8](/readme_assets/drf_api_settings.png)<br>
+**drf_api urls.py** : No errors or warnings to show.<br>
+![drf_api urls.py PEP8](/readme_assets/drf_api_urls.png)<br>
+**drf_api views.py** : No errors or warnings to show.<br>
+![drf_api views.py PEP8](/readme_assets/drf_api_views.png)<br>
+**drf_api wsgi.py** : No errors or warnings to show.<br>
+![drf_api wsgi.py PEP8](/readme_assets/drf_api_wsgi.png)<br>
+
+- **events app**<br>
+**events admin.py** : No errors or warnings to show.<br>
+![events admin.py PEP8](/readme_assets/events_admin.png)<br>
+**events apps.py** : No errors or warnings to show.<br>
+![events apps.py PEP8](/readme_assets/events_apps.png)<br>
+**events models.py** : No errors or warnings to show.<br>
+![events models.py PEP8](/readme_assets/events_models.png)<br>
+**events serializers.py** : No errors or warnings to show.<br>
+![events serializers.py PEP8](/readme_assets/events_serializers.png)<br>
+**events tests.py** : No errors or warnings to show.<br>
+![events tests.py PEP8](/readme_assets/events_tests.png)<br>
+**events urls.py** : No errors or warnings to show.<br>
+![events urls.py PEP8](/readme_assets/events_urls.png)<br>
+**events views.py** : No errors or warnings to show.<br>
+![events views.py PEP8](/readme_assets/events_views.png)<br>
+
+- **followers app**<br>
+**followers admin.py** : No errors or warnings to show.<br>
+![followers admin.py PEP8](/readme_assets/followers_admin.png)<br>
+**followers apps.py** : No errors or warnings to show.<br>
+![followers apps.py PEP8](/readme_assets/followers_apps.png)<br>
+**followers models.py** : No errors or warnings to show.<br>
+![followers models.py PEP8](/readme_assets/followers_models.png)<br>
+**followers serializers.py** : No errors or warnings to show.<br>
+![followers serializers.py PEP8](/readme_assets/followers_serializers.png)<br>
+**followers tests.py** : No errors or warnings to show.<br>
+![followers tests.py PEP8](/readme_assets/followers_tests.png)<br>
+**followers urls.py** : No errors or warnings to show.<br>
+![followers urls.py PEP8](/readme_assets/followers_urls.png)<br>
+**followers views.py** : No errors or warnings to show.<br>
+![followers views.py PEP8](/readme_assets/followers_views.png)<br>
+
+- **likes app**<br>
+**likes admin.py** : No errors or warnings to show.<br>
+![likes admin.py PEP8](/readme_assets/likes_admin.png)<br>
+**likes apps.py** : No errors or warnings to show.<br>
+![likes apps.py PEP8](/readme_assets/likes_apps.png)<br>
+**likes models.py** : No errors or warnings to show.<br>
+![likes models.py PEP8](/readme_assets/likes_models.png)<br>
+**likes serializers.py** : No errors or warnings to show.<br>
+![likes serializers.py PEP8](/readme_assets/likes_serializers.png)<br>
+**likes tests.py** : No errors or warnings to show.<br>
+![likes tests.py PEP8](/readme_assets/likes_tests.png)<br>
+**likes urls.py** : No errors or warnings to show.<br>
+![likes urls.py PEP8](/readme_assets/likes_urls.png)<br>
+**likes views.py** : No errors or warnings to show.<br>
+![likes views.py PEP8](/readme_assets/likes_views.png)<br>
+
+- **posts app**<br>
+**posts admin.py** : No errors or warnings to show.<br>
+![posts admin.py PEP8](/readme_assets/posts_admin.png)<br>
+**posts apps.py** : No errors or warnings to show.<br>
+![posts apps.py PEP8](/readme_assets/posts_apps.png)<br>
+**posts models.py** : No errors or warnings to show.<br>
+![posts models.py PEP8](/readme_assets/models_admin.png)<br>
+**posts serializers.py** : No errors or warnings to show.<br>
+![posts serializers.py PEP8](/readme_assets/posts_serializers.png)<br>
+**posts tests.py** : No errors or warnings to show.<br>
+![posts tests.py PEP8](/readme_assets/posts_tests.png)<br>
+**posts urls.py** : No errors or warnings to show.<br>
+![posts urls.py PEP8](/readme_assets/posts_urls.png)<br>
+**posts views.py** : No errors or warnings to show.<br>
+![posts views.py PEP8](/readme_assets/posts_views.png)<br>
+
+-**profiles app**<br>
+**profiles admin.py** : No errors or warnings to show.<br>
+![profiles admin.py PEP8](/readme_assets/profiles_admin.png)<br>
+**profiles apps.py** : No errors or warnings to show.<br>
+![profiles apps.py PEP8](/readme_assets/profiles_apps.png)<br>
+**profiles models.py** : No errors or warnings to show.<br>
+![profiles models.py PEP8](/readme_assets/profiles_models.png)<br>
+**profiles serializers.py** : No errors or warnings to show.<br>
+![profiles serializers.py PEP8](/readme_assets/profiles_serializers.png)<br>
+**profiles tests.py** : No errors or warnings to show.<br>
+![profiles tests.py PEP8](/readme_assets/profiles_tests.png)<br>
+**profiles urls.py** : No errors or warnings to show.<br>
+![profiles urls.py PEP8](/readme_assets/profiles_urls.png)<br>
+**profiles views.py** : No errors or warnings to show.<br>
+![profiles views.py PEP8](/readme_assets/profiles_views.png)<br>
+
+- **manage**<br>
+**manage.py** : No errors or warnings to show.<br>
+![manage.py PEP8](/readme_assets/manage.png)<br>
 
 #### HTML W3C Validator
 As this is a Django project, the HTML couldn't be tested via the site's URL, due to Django tags and Jinja templating language in HTML files. Instead, the source code of each page was pasted into the validator directly.<br>
-**Home Page**: No errors or warnings to show.
-![Home Page](/media/images/w3c_validator_home_page.png)<br><br>
-**Event Detail Page**: 4 errors are returned.
-![Event Detail Page](/media/images/w3c_validator_event_detail_page.png)
-**Fix**:
-- 1. Change the **p** element into **div** element as the validator did not read the closing **p** element.<br>
-- 2. Remove the <strong> element.
-- 3. Add a data attribute to the comment_id of Delete button.
-- 4. Add a data attribute to the comment_id of Edit button.<br><br>
-**Event Registration Page**: No errors or warnings to show.
-![Event Registration Page](/media/images/w3c_validator_event_registeration_page.png)
-**Fix**:
-- 1. Change the **p** element into **div** element as the validator did not read the closing **p** element.<br><br>
-**Category Page**: No errors or warnings to show.
-![Category Page](/media/images/w3c_validator_category_page.png)<br><br>
-**Profile Page**: No errors or warnings to show.
-![Profile Page](/media/images/w3c_validator_profile_page.png)<br><br>
-**Logout Page**: No errors or warnings to show.
-![Logout Page](/media/images/w3c_validator_logout_page.png)<br><br>
-**Register Page**: No errors or warnings to show.
-![Register Page](/media/images/w3c_validator_register_page.png)
-**Fix**:
-- 1. The fix was not possible as the file was not accessible for edit.
-<br><br>
-
-**Login Page**: No errors or warnings to show.
-![Login Page](/media/images/w3c_validator_login_page.png)<br><br>
+**index.html**: No errors or warnings to show.
+![Home Page](/readme_assets/index.png)<br><br>
 
 #### CSS Jigsaw Validator
-No errors were found when passing through the official W3C CSS.
-![STYLE CSS](/media/images/jigsaw_css_validator.png)
+All css modules are checked and no errors were found when passing through the official W3C CSS.
+![Styles Modules](/readme_assets/jigsaw_css_validator.png)
 
 
 #### Jshint Validator
