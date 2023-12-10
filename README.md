@@ -688,3 +688,21 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 ```
 <br><br>
 <a href="#contents">BACK TO CONTENTS 🔼</a>
+
+## Credits 
+### Content 
+- The idea of the project and most of the contents were taken from P5 walkthrough project. 
+- The other contents are fictitious.
+
+### Media
+- The site logo image is taken from the [Zarla](https://www.zarla.com/) and the other site images are taken from [Pexels](https://www.pexels.com/).
+
+### Code
+- The code used for most parts of the website is taken from the [PP5 Walkthrough Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/).
+- The code used for events and bookings api are written with the support of mentor.
+
+## Acknowledgements
+- Thanks to my Code Institute mentor Ms. Juliia Konovalov for her guidance, insight, and constant confidence boost to help me in the right direction.
+- Thanks to Code Institute for material and support (Tutor Assistance), Slack Community, and other valuable online resources.
+<br><br>
+<a href="#contents">BACK TO CONTENTS 🔼</a>
