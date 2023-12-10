@@ -557,9 +557,9 @@ No errors were found when passing through the JSHint.
   - The sign-out button works as expected and securely logs out the user and loads the home page.
 
 - __Backend / API__
-  - The api models, serializers, apps, urls, and views are working and functioning as expected. 
+  - The API models, serializers, apps, URLs, and views are working and functioning as expected. 
   - It controls the execution of the data based on the provided models and methods.
-  - It serialize the data and parse it as JSON to the frontend.
+  - It serializes the data and parses it as JSON to the frontend.
   - The performs the expected CRUD operation based on the API View Models.
   - The admin panel has been tested repeatedly without any issues. 
   - All models are working properly.
@@ -569,4 +569,65 @@ No errors were found when passing through the JSHint.
 ### Testing User Stories
 User Stories are fully achieved. They are discussed in [**User Stories**](#user-stories) section under **Strategy** and for more details please refer to [Github Repository](https://github.com/users/Ahmad-Hazrati/projects/8/views/1).
 
+<a href="#contents">BACK TO CONTENTS 🔼</a>
+
+### Bugs / Issues
+
+<table  width = 100% cellspacing="0" cellpadding="0">
+   <tr>
+   <th>Issue/Bug</th>
+   <th>Solution</th>
+   </tr>
+   <tr>
+   <td>
+   DeleteConfirmation component was not functioning while delete functions were called.
+   </td>
+   <td>
+   
+   </td>
+   </tr>
+   <tr>
+   <td>ImportError: Could not import 'restframework.renderers.JSONRenderer' for API setting 'DEFAULT_RENDERER_CLASSES'. ModuleNotFoundError: No module named 'restframework'.
+   </td>
+   <td>The issue is rectified by adding the below code to settings.py taken from django-rest-framework official website.
+   `(REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ]},)`
+   </td>
+   </tr>
+   
+   <tr>
+   <td>CurrentUserContext.js:23 AxiosErrorcode: "ERR_BAD_REQUEST"config: {transitional: {…}, adapter: Array(2), transformRequest: Array(1), transformResponse: Array(1), timeout: 0, …}message: "Request failed with status code 401"name: "AxiosError"request: XMLHttpRequest {onreadystatechange: null, readyState: 4, timeout: 0, withCredentials: true, upload: XMLHttpRequestUpload, …}response: {data: {…}, status: 401, statusText: '', headers: AxiosHeaders, config: {…}, …}stack: "AxiosError: Request failed with status code 401\n    at settle (https://8080-ahmadhazrat-drfapilittl-ldkf5dv9gvn.ws-eu106.gitpod.io/static/js/0.chunk.js:4291:12)\n    at XMLHttpRequest.onloadend (https://8080-ahmadhazrat-drfapilittl-ldkf5dv9gvn.ws-eu106.gitpod.io/static/js/0.chunk.js:2992:70)"[[Prototype]]: Errorconstructor: ƒ AxiosError(message, code, config, request, response)toJSON: ƒ toJSON()isAxiosError: true[[Prototype]]: Objectconstructor: ƒ Error()message: ""name: "Error"toString: ƒ toString()[[Prototype]]: Object</td>
+   <td>The issue is rectified by resetting the databases, clearing the browser caches, and remigrating the models.
+   </td>
+   </tr>
+   <tr>
+   <td>
+   Get the error [27/Nov/2023 17:18:54] "POST /api/likes/ HTTP/1.1" 400 37
+   </td>
+   <td>
+   Reset the likes model and remove the likes element from the model.
+   </td>
+   </tr>   
+  </table>
+
+### Unresolved Bugs or Issues
+
+<table  width = 100% cellspacing="0" cellpadding="0">
+   <tr>
+   <th>Issue/Bug</th>
+   <th>Debugging measures taken</th>
+   </tr>   
+   <tr>
+   <td>The posts and comments are not loading when exceeding 10 in numbers and displaying the error message "Failed to load response data: No data found for resource with given identifier.
+   </td>
+   <td>The issue has been tackled severals times and with the support of the tutors but could not find the real cause to rectify it. As recommended downgraded the react and react-dom version to ^17.02 but still the issue persists and added to the un-resolved bugs.
+   Worth to mention that in the deployed version it is working completely fine.
+   </td>
+   </tr>
+   
+  </table>
+
+ <br><br>
 <a href="#contents">BACK TO CONTENTS 🔼</a>
