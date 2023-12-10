@@ -631,3 +631,60 @@ User Stories are fully achieved. They are discussed in [**User Stories**](#user-
 
  <br><br>
 <a href="#contents">BACK TO CONTENTS 🔼</a>
+
+## Deployment
+
+### Deploying to Heroku
+* This site was deployed by completing the following steps:
+
+1. Log in to [Heroku](https://id.heroku.com) or create an account.
+2. On the main page click the button labelled New in the top right corner and from the drop-down menu select Create New App.
+3. You must enter a unique app name.
+4. Next select your region.
+5. Click on the Create App button
+6. The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars.
+7. Click Reveal Config Vars and enter the following variables and values:
+    - Add "ALLOWED_HOST" and its value (excluding the https:// and trailing /);
+    - Add "CLIENT_ORIGIN" and its value;
+    - Add "CLOUDINARY_URL" and its value;
+    - Add "DATABASE_URL" and its value;
+    - Add "DISABLE_COLLECTSTATIC" and its value;
+    - Add "SECRET_KEY" and its value;
+8. Next, scroll down to the Buildpack section click Add Buildpack select Python, and click Save Changes.
+9. Scroll to the top of the page and choose the Deploy tab.
+10. Select Github as the deployment method.
+11. Confirm you want to connect to GitHub.
+12. Search for the repository name and click the connect button.
+13. Scroll to the bottom of the deploy page and select the preferred deployment type.
+14. Click either Enable Automatic Deploys for automatic deployment when you push updates to Github.
+
+### Fork the repository
+To create a copy of the repository on your account and change it without affecting the original project, use **Fork** directly from GitHub:
+1. On [My Repository Page](https://github.com/Ahmad-Hazrati/drf_api_littleangels), press Fork in the top right of the page
+2. A forked version of my project will appear in your repository
+
+### Making a Local Clone
+
+1. Log in to Github and locate the [Github Repository.](https://github.com/Ahmad-Hazrati/drf_api_littleangels)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+7. Press Enter. Your local clone will be created.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+<br><br>
+<a href="#contents">BACK TO CONTENTS 🔼</a>
