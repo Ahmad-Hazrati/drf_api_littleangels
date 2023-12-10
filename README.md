@@ -21,7 +21,7 @@ And can be accessed by this [link.](https://drf-api-littleangels-f86db13e3ae5.he
     - [Simple and intuitive User Experience](#simple-and-intuitive-user-experience)
     - [Relevant content](#relevant-content)
     - [Features for upgraded experience](#features-for-upgraded-experience)
-    - [Different account types for Participants and staff members / Admin](#different-account-types-for-participants-and-staff-members--admin)
+    - [Different account types for normal users and staff member/admin](#different-account-types-for-normal-users-and-staff-member-or-admin)
     - [Responsiveness](#responsiveness)
   - [Structure](#structure)
   - [Skeleton](#structure)
@@ -49,11 +49,11 @@ And can be accessed by this [link.](https://drf-api-littleangels-f86db13e3ae5.he
     - [Jshint Validator](#jshint-validator)
   - [Manual Testing](#manual-testing)
     - [Frontend](#frontend)
-    - [Backend / Admin Panel](#backend--admin-panel)
+    - [Backend / API](#backend-or-api)
   - [Testing User Stories](#testing-user-stories)
      - [User Goals](#user-goals)
      - [Site Administrator Goals](#site-administrator-goals)
-  - [Bugs / Issues](#bugs--issues)
+  - [Bugs / Issues](#bugs-or-issues)
   - [Unresolved Bugs / Issues](#unresolved-bugs-or-issues)
 - [Deployment](#deployment)
   - [Deploying to Heroku](#deploying-to-heroku)
@@ -236,9 +236,9 @@ All user stories implementation progress was registered using [littleangels_proj
   - The post image acts as an active navigational link to the post detail section.
   ![Home](/readme_assets/home.png)<br><br>
 - __Post detail__ 
-  - This section is visible to all users and contains all details of the post including like/unlike and comment functionalities. 
-  - If the user is not logged in then s/he is restricted and alerted to log in to use like/unlike or comment functionalities otherwise, can only view the number of likes and comments.
-  - If the user is logged in and is the owner of the like then s/he can like/unlike the post and edit or delete his/her comments.
+  - This section is visible to all users and contains all details of the post including number of likes and comments functionalities. 
+  - If the user is not logged in then s/he is restricted and alerted to log in to use like or comment functionalities otherwise, can only view the number of likes and comments.
+  - If the user is logged in and is the owner of the like then s/he can unlike the post and edit or delete his/her comments.
   - If the user is logged in and is the owner of the comment then s/he can edit and delete the comment through a dropdown menu.
   ![Post detail](/readme_assets/post_detail.png)<br><br>
 - __Add post__
@@ -515,4 +515,58 @@ All css modules are checked and no errors were found when passing through the of
 #### Jshint Validator
 No errors were found when passing through the JSHint.
   ![JSHint validator comments.js](/media/images/jshint_comments.png)
-  ![JSHint validator message_box](/media/images/jshint_message_box.png)
+
+  ### Manual Testing
+
+- __Frontend__
+  - The frontend works properly, displaying the components and sections in the expected place. The components are working just fine and communicate with the API to get or post data.
+  - The home page loads normally and functions properly. The website favicon and title load as expected.
+  - The header section works properly both for desktop and mobile. The logo is at its correct place, and the home, sign-in, and sign-up buttons are showing and functioning properly. 
+  - The navbar icons are displayed at the top in the desktop view but are hidden in the mobile view. The icon can be accessed through the hamburger menu. The hamburger menu opens when clicked on the hamburger icon and closes when clicked inside or outside the header section.
+  - The landing page loads normally and displays the most followed profiles at the top in desktop view and at the right side in mobile view. As expected the user name and profile image are showing in the most followed profiles sections.
+  - The search bar loads and functions normally. It returns the posts matched with the user inputs.
+  - The posts are loading and displaying normally based on the created date. 
+  - The scroll function works as expected in the deployed version and loads more posts as the user scrolls down.
+  - The like and comment functionalities are working as expected. 
+  - The functionality to display the number of likes and comments is active only for authenticated users.
+  - The navigation links such post image url, like and comment icon are working fine and navigates the user to the post detail section. 
+  - In the post detail section the dropdown menu component loads as expected based on the ternary condition applied. If the user is not the owner of the post then the menu doesn't show up.
+  - The condition to like/unlike a post is also working fine. It checks if the user has already liked the post, if so, then unlikes it otherwise it likes it. 
+  - The comments functionality is working without any issues. The user can view all comments written by other users and can update or delete his comments.
+  - The scroll function functions as expected in the deployed version and loads more comments as the user scrolls down.
+  - The sign-in section loads normally and authenticates the user as expected. It checks and controls the fields and all functions are working without any issues. The user can sign in, if s/he already has an account, otherwise, he can access the sign-up section with the provided link.
+  - The sign-up section loads normally and displays all the required fields. The control function to check the fields such as empty fields, possible same username in the database, not matching passwords are alerted to the user for correction.
+  - Post Creation button loads normally and functions without any issues. It provides the post creation form and controls the image size properly.
+  - The event button works and navigates the user to the event section normally. The event details are displaying without any issue. 
+  - The scroll function functions properly in the deployed version and fetch more events as the user scrolls down.
+  - The url set on the event image navigates the user to the event detail section without any issues.
+  - The event details are displaying as expected. 
+  - The buttons to book or go back to the event section are working fine.
+  - The booking function works without any issues. The fuctionality to check the current user and display the dropdown menu to delete the booking is working properly. 
+  - The alert message for deletion of the booking is working properly.
+  - The feed button works and navigates the user to the feed section as expected. The follower and following users' posts are loading without any issues. The scroll function functions in the deployed version as expected and loads more posts as the user scrolls down.
+  - The like button works and navigates the user to the liked section without any issues. The posts liked by the user are fetching and loading properly. 
+  - The profile button works and navigates the user to the profile section. 
+  - The profile details including the number of posts, number of followers, and number of following users are loading properly.
+  - The function to check the current user and load the dropdown menu if the user is the owner of the profile is working fine.
+  - The edit button works as expected and loads the profile edit section.
+  - The fields in the profile edit section are loading and working as expected.
+  - The change username button works as expected and loads the edit page.
+  The change username field loads and works just fine.
+  - The change password button works and loads the password change section properly. The functionality to accept new passwords and confirm both password matches are working properly.
+  - The sign-out button works as expected and securely logs out the user and loads the home page.
+
+- __Backend / API__
+  - The api models, serializers, apps, urls, and views are working and functioning as expected. 
+  - It controls the execution of the data based on the provided models and methods.
+  - It serialize the data and parse it as JSON to the frontend.
+  - The performs the expected CRUD operation based on the API View Models.
+  - The admin panel has been tested repeatedly without any issues. 
+  - All models are working properly.
+  - The admin user can perform CRUD operation on event and category models without any issues.
+  - The admin user can publish events.
+
+### Testing User Stories
+User Stories are fully achieved. They are discussed in [**User Stories**](#user-stories) section under **Strategy** and for more details please refer to [Github Repository](https://github.com/users/Ahmad-Hazrati/projects/8/views/1).
+
+<a href="#contents">BACK TO CONTENTS 🔼</a>

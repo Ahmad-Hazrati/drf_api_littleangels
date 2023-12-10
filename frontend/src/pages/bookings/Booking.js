@@ -3,6 +3,7 @@ import Media from "react-bootstrap/Media";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
+import Alert from "react-bootstrap/esm/Alert";
 
 import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -62,7 +63,11 @@ const Booking = (props) => {
         {is_user ? (
           <MoreDropdown handleDelete={handleDeleteBooking} />
         ) : (
-          <p>You are not the authorized user to delete this booking</p>
+          <div>
+            <Alert variant="warning">
+              You are not the authorized user to delete this booking
+            </Alert>
+          </div>
         )}
       </Media>
     </>

@@ -30,33 +30,30 @@ const BookingCreateForm = (props) => {
           },
         ],
       }));
-    } catch (err) {
-    }
+    } catch (err) {}
   };
 
   return (
     <Form className="mt-2 text-center" onSubmit={handleBook}>
       <Button
-              className={`mb-4 ${btnStyles.Button} ${btnStyles.Blue}`}
-              onClick={() => history.goBack()}
-            >
-              Back
-            </Button>
-      {(<Booking 
-      available_seats= {event.available_seats} />) ? (
-        <>
-          <div>
-      
-            <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
-              type="submit"
-            >
-              book
-            </Button>
-          </div>
-        </>
+        className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright} my-2`}
+        onClick={() => history.goBack()}
+      >
+        back
+      </Button>
+      {<Booking available_seats={event.available_seats} /> ? (
+        <div>
+          <Button
+            className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright} my-2`}
+            type="submit"
+          >
+            book
+          </Button>
+        </div>
       ) : (
-        <Alert variant="warning">All seats are fully booked!</Alert>
+        <div>
+          <Alert variant="warning">All seats are fully booked!</Alert>
+        </div>
       )}
     </Form>
   );
