@@ -34,6 +34,7 @@ function CommentEditForm(props) {
       }));
       setShowEditForm(false);
     } catch (err) {
+      undefined
     }
   };
 

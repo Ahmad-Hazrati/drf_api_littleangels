@@ -39,6 +39,7 @@ const Post = (props) => {
       await axiosRes.delete(`/posts/${id}/`);
       history.goBack();
     } catch (err) {
+      undefined
     }
   };
 
@@ -54,6 +55,7 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
+      undefined
     }
   };
 
@@ -69,6 +71,7 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
+      undefined
     }
   };
 
@@ -101,7 +104,7 @@ const Post = (props) => {
           {is_user ? (
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip>You can't like your own post!</Tooltip>}
+              overlay={<Tooltip>You can&apos;t like your own post!</Tooltip>}
             >
               <i className="far fa-heart" />
             </OverlayTrigger>

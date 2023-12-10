@@ -46,7 +46,9 @@ const Booking = (props) => {
         ...prevBookings,
         results: prevBookings.results.filter((booking) => booking.id !== id),
       }));
-    } catch (err) {}
+    } catch (err) {
+      undefined
+    }
   };
 
   return (

@@ -52,6 +52,7 @@ function ProfilePage() {
         setProfilePosts(profilePosts);
         setHasLoaded(true);
       } catch (err) {
+        undefined
       }
     };
     fetchData();
@@ -114,7 +115,7 @@ function ProfilePage() {
   const mainProfilePosts = (
     <>
       <hr />
-      <p className="text-center">{profile?.user}'s posts</p>
+      <p className="text-center">{profile?.user}&apos; posts</p>
       <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll

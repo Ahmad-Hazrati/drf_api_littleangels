@@ -15,7 +15,6 @@ const DropdownMenu = React.forwardRef(({ onClick }, ref) => (
       onClick(e);
     }}
   />
-
 ));
 
 export const MoreDropdown = ({ handleEdit, handleDelete }) => {
@@ -44,8 +43,6 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => {
     </Dropdown>
   );
 };
-
-
 
 export function ProfileEditDropdown({ id }) {
   const history = useHistory();

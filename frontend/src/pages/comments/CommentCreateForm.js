@@ -37,6 +37,7 @@ function CommentCreateForm(props) {
       }));
       setDescription("");
     } catch (err) {
+      undefined
     }
   };
 

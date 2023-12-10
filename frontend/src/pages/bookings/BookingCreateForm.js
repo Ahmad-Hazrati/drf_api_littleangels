@@ -30,7 +30,9 @@ const BookingCreateForm = (props) => {
           },
         ],
       }));
-    } catch (err) {}
+    } catch (err) {
+      undefined
+    }
   };
 
   return (

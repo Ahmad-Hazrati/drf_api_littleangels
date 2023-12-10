@@ -31,6 +31,7 @@ function EventPage() {
         setEvent({ results: [event] });
         setBookings(bookings);
       } catch (err) {
+        undefined
       }
     };
     handleMount();

@@ -21,7 +21,7 @@ And can be accessed by this [link.](https://drf-api-littleangels-f86db13e3ae5.he
     - [Simple and intuitive User Experience](#simple-and-intuitive-user-experience)
     - [Relevant content](#relevant-content)
     - [Features for upgraded experience](#features-for-upgraded-experience)
-    - [Different account types for normal users and staff member/admin](#different-account-types-for-normal-users-and-staff-member-or-admin)
+    - [Different account types for normal users and staff member/admin](#different-account-types-for-normal-users-and-staff-member--admin)
     - [Responsiveness](#responsiveness)
   - [Structure](#structure)
   - [Skeleton](#structure)
@@ -40,6 +40,10 @@ And can be accessed by this [link.](https://drf-api-littleangels-f86db13e3ae5.he
   - [Python Packages](#python-packages)
   - [JavaScript Packages](#javascript-packages)
   - [Programs Used](#programs-used)
+- [Deployment](#deployment)
+  - [Deploying to Heroku](#deploying-to-heroku)
+  - [Fork the repository](#fork-the-repository)
+  - [Making a Local Clone](#making-a-local-clone)  
 - [Testing](#testing)
   - [Google Chrome Lighthouse](#google-chrome-lighthouse)
   - [Validator Testing](#validator-testing)
@@ -48,17 +52,13 @@ And can be accessed by this [link.](https://drf-api-littleangels-f86db13e3ae5.he
     - [CSS Jigsaw Validator](#css-jigsaw-validator)
     - [Jshint Validator](#jshint-validator)
   - [Manual Testing](#manual-testing)
-    - [Frontend](#frontend)
-    - [Backend / API](#backend-or-api)
+    - [Front-end](#front-end)
+    - [Back-end / API](#back-end-or-api)
   - [Testing User Stories](#testing-user-stories)
      - [User Goals](#user-goals)
      - [Site Administrator Goals](#site-administrator-goals)
   - [Bugs / Issues](#bugs-or-issues)
   - [Unresolved Bugs / Issues](#unresolved-bugs-or-issues)
-- [Deployment](#deployment)
-  - [Deploying to Heroku](#deploying-to-heroku)
-  - [Fork the repository](#fork-the-repository)
-  - [Making a Local Clone](#making-a-local-clone)
 - [Credits](#credits)
   - [Content](#content)
   - [Media](#media)
@@ -357,11 +357,69 @@ Further features inclusive (cited above) to implement are:
 [Color-HEX](https://www.color-hex.com): used to generate the webiste colors.<br>
 <br><a href="#contents">BACK TO CONTENTS 🔼</a>
 
+
+## Deployment
+
+### Deploying to Heroku
+* This site was deployed by completing the following steps:
+
+1. Log in to [Heroku](https://id.heroku.com) or create an account.
+2. On the main page click the button labelled New in the top right corner and from the drop-down menu select Create New App.
+3. You must enter a unique app name.
+4. Next select your region.
+5. Click on the Create App button
+6. The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars.
+7. Click Reveal Config Vars and enter the following variables and values:
+    - Add "ALLOWED_HOST" and its value (excluding the https:// and trailing /);
+    - Add "CLIENT_ORIGIN" and its value;
+    - Add "CLOUDINARY_URL" and its value;
+    - Add "DATABASE_URL" and its value;
+    - Add "DISABLE_COLLECTSTATIC" and its value;
+    - Add "SECRET_KEY" and its value;
+8. Next, scroll down to the Buildpack section click Add Buildpack select Python, and click Save Changes.
+9. Scroll to the top of the page and choose the Deploy tab.
+10. Select Github as the deployment method.
+11. Confirm you want to connect to GitHub.
+12. Search for the repository name and click the connect button.
+13. Scroll to the bottom of the deploy page and select the preferred deployment type.
+14. Click either Enable Automatic Deploys for automatic deployment when you push updates to Github.
+
+### Fork the repository
+To create a copy of the repository on your account and change it without affecting the original project, use **Fork** directly from GitHub:
+1. On [My Repository Page](https://github.com/Ahmad-Hazrati/drf_api_littleangels), press Fork in the top right of the page
+2. A forked version of my project will appear in your repository
+
+### Making a Local Clone
+
+1. Log in to Github and locate the [Github Repository.](https://github.com/Ahmad-Hazrati/drf_api_littleangels)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+7. Press Enter. Your local clone will be created.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+<br><br>
+<a href="#contents">BACK TO CONTENTS 🔼</a>
+
 ## Testing 
 Testing has taken place continuously throughout the development of the project. Each section, function and component was tested regularly. When the outcome was not as expected, debugging took place at that point.
 
 ### Google Chrome Lighthouse
-Google Chrome lighthouse checks and generates a comprehensive report regarding the website's performance, accessibility, best practices, and SEO.
+Google Chrome lighthouse checks and generates a comprehensive report regarding the website's performance, accessibility, best practices, and SEO.<br>
 ![Lighthouse Report](/readme_assets/lighthouse.png)
 
 
@@ -409,7 +467,7 @@ Google Chrome lighthouse checks and generates a comprehensive report regarding t
 ![drf_api permissions.py PEP8](/readme_assets/drf_api_permissions.png)<br>
 **drf_api serializers.py** : No errors or warnings to show.<br>
 ![drf_api serializers.py PEP8](/readme_assets/drf_api_serializers.png)<br>
-**drf_api settings.py** : No errors or warnings to show.<br>
+**drf_api settings.py** : The line too long is showing and since it is not recommended to edit the settings sentences which affect the project, so it is left unchanged.<br>
 ![drf_api settings.py PEP8](/readme_assets/drf_api_settings.png)<br>
 **drf_api urls.py** : No errors or warnings to show.<br>
 ![drf_api urls.py PEP8](/readme_assets/drf_api_urls.png)<br>
@@ -505,7 +563,7 @@ Google Chrome lighthouse checks and generates a comprehensive report regarding t
 #### HTML W3C Validator
 As this is a Django project, the HTML couldn't be tested via the site's URL, due to Django tags and Jinja templating language in HTML files. Instead, the source code of each page was pasted into the validator directly.<br>
 **index.html**: No errors or warnings to show.
-![Home Page](/readme_assets/index.png)<br><br>
+![Index](/readme_assets/w3c_validator_index.png)<br><br>
 
 #### CSS Jigsaw Validator
 All css modules are checked and no errors were found when passing through the official W3C CSS.
@@ -518,7 +576,7 @@ No errors were found when passing through the JSHint.
 
   ### Manual Testing
 
-- __Frontend__
+- __Front-end__
   - The frontend works properly, displaying the components and sections in the expected place. The components are working just fine and communicate with the API to get or post data.
   - The home page loads normally and functions properly. The website favicon and title load as expected.
   - The header section works properly both for desktop and mobile. The logo is at its correct place, and the home, sign-in, and sign-up buttons are showing and functioning properly. 
@@ -556,7 +614,7 @@ No errors were found when passing through the JSHint.
   - The change password button works and loads the password change section properly. The functionality to accept new passwords and confirm both password matches are working properly.
   - The sign-out button works as expected and securely logs out the user and loads the home page.
 
-- __Backend / API__
+- __Back-end / API__
   - The API models, serializers, apps, URLs, and views are working and functioning as expected. 
   - It controls the execution of the data based on the provided models and methods.
   - It serializes the data and parses it as JSON to the frontend.
@@ -632,62 +690,6 @@ User Stories are fully achieved. They are discussed in [**User Stories**](#user-
  <br><br>
 <a href="#contents">BACK TO CONTENTS 🔼</a>
 
-## Deployment
-
-### Deploying to Heroku
-* This site was deployed by completing the following steps:
-
-1. Log in to [Heroku](https://id.heroku.com) or create an account.
-2. On the main page click the button labelled New in the top right corner and from the drop-down menu select Create New App.
-3. You must enter a unique app name.
-4. Next select your region.
-5. Click on the Create App button
-6. The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars.
-7. Click Reveal Config Vars and enter the following variables and values:
-    - Add "ALLOWED_HOST" and its value (excluding the https:// and trailing /);
-    - Add "CLIENT_ORIGIN" and its value;
-    - Add "CLOUDINARY_URL" and its value;
-    - Add "DATABASE_URL" and its value;
-    - Add "DISABLE_COLLECTSTATIC" and its value;
-    - Add "SECRET_KEY" and its value;
-8. Next, scroll down to the Buildpack section click Add Buildpack select Python, and click Save Changes.
-9. Scroll to the top of the page and choose the Deploy tab.
-10. Select Github as the deployment method.
-11. Confirm you want to connect to GitHub.
-12. Search for the repository name and click the connect button.
-13. Scroll to the bottom of the deploy page and select the preferred deployment type.
-14. Click either Enable Automatic Deploys for automatic deployment when you push updates to Github.
-
-### Fork the repository
-To create a copy of the repository on your account and change it without affecting the original project, use **Fork** directly from GitHub:
-1. On [My Repository Page](https://github.com/Ahmad-Hazrati/drf_api_littleangels), press Fork in the top right of the page
-2. A forked version of my project will appear in your repository
-
-### Making a Local Clone
-
-1. Log in to Github and locate the [Github Repository.](https://github.com/Ahmad-Hazrati/drf_api_littleangels)
-2. Under the repository name, click "Clone or download".
-3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
-4. Open Git Bash
-5. Change the current working directory to the location where you want the cloned directory to be made.
-6. Type `git clone`, and then paste the URL you copied in Step 3.
-
-```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-```
-
-7. Press Enter. Your local clone will be created.
-
-```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-> Cloning into `CI-Clone`...
-> remote: Counting objects: 10, done.
-> remote: Compressing objects: 100% (8/8), done.
-> remove: Total 10 (delta 1), reused 10 (delta 1)
-> Unpacking objects: 100% (10/10), done.
-```
-<br><br>
-<a href="#contents">BACK TO CONTENTS 🔼</a>
 
 ## Credits 
 ### Content 

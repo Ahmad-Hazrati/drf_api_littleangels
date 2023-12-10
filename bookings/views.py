@@ -16,9 +16,6 @@ class BookingList(generics.ListCreateAPIView):
         'event'
     ]
 
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
-
 
 class BookingDetail(generics.RetrieveDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]

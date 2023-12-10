@@ -37,6 +37,7 @@ function PostPage() {
         setPost({ results: [post] });
         setComments(comments);
       } catch (err) {
+        undefined
       }
     };
 

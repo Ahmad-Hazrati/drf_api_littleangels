@@ -39,6 +39,7 @@ function PostEditForm() {
           ? setPostData({ title, description, image })
           : history.push("/");
       } catch (err) {
+        undefined
       }
     };
     handleMount();
