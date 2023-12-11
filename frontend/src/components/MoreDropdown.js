@@ -17,6 +17,26 @@ const DropdownMenu = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
+export const MoreDropdownBooking = ({ handleDelete }) => {
+  return (
+    <Dropdown className="ml-auto" drop="left">
+      <Dropdown.Toggle as={DropdownMenu} />
+      <Dropdown.Menu
+        className="text-center"
+        popperConfig={{ strategy: "fixed" }}
+      >
+        <Dropdown.Item
+          className={styles.DropdownItem}
+          onClick={handleDelete}
+          aria-label="delete"
+        >
+          <i className="fas fa-trash-alt" />
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+};
+
 export const MoreDropdown = ({ handleEdit, handleDelete }) => {
   return (
     <Dropdown className="ml-auto" drop="left">

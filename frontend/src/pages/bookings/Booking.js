@@ -2,7 +2,7 @@ import React from "react";
 import Media from "react-bootstrap/Media";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
-import { MoreDropdown } from "../../components/MoreDropdown";
+import { MoreDropdownBooking } from "../../components/MoreDropdown";
 import Alert from "react-bootstrap/esm/Alert";
 
 import styles from "../../styles/Comment.module.css";
@@ -21,6 +21,7 @@ const Booking = (props) => {
   } = props;
 
   const currentUser = useCurrentUser();
+
   // user is undefined => you are not sending this data
   console.log("profile_id: ", profile_id);
   console.log("booking id: ", id);
@@ -69,7 +70,7 @@ const Booking = (props) => {
           <span className={styles.Date}>{modified_at}</span>
         </Media.Body>
         {is_user ? (
-          <MoreDropdown handleDelete={handleDeleteConfirmation} />
+          <MoreDropdownBooking handleDelete={handleDeleteConfirmation} />
         ) : (
           <div>
             <Alert variant="warning">
