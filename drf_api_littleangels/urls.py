@@ -19,16 +19,23 @@ from django.views.generic import TemplateView
 from .views import logout_route
 
 urlpatterns = [
+    # Default route for the homepage
     path('', TemplateView.as_view(template_name='index.html')),
+    # Admin site
     path('admin/', admin.site.urls),
+    # Django Rest Framework authentication URLs
     path('api/api-auth/', include('rest_framework.urls')),
+    # Custom logout route
     # our logout route has to be above the default one to be matched first
     path('api/dj-rest-auth/logout/', logout_route),
+    # Django Rest Auth URLs
     path('api/dj-rest-auth/', include('dj_rest_auth.urls')),
+    # Django Rest Auth Registration URLs
     path(
         'api/dj-rest-auth/registration/',
         include('dj_rest_auth.registration.urls')
     ),
+    # API routes for different app functionalities
     path('api/', include('profiles.urls')),
     path('api/', include('posts.urls')),
     path('api/', include('comments.urls')),
@@ -38,4 +45,5 @@ urlpatterns = [
     path('api/', include('bookings.urls')),
 ]
 
+# Handler for 404 errors (Page Not Found)
 handler404 = TemplateView.as_view(template_name='index.html')

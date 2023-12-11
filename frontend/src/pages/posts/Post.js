@@ -10,6 +10,7 @@ import { Link, useHistory } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
 
+
 const Post = (props) => {
   const {
     id,
@@ -33,6 +34,13 @@ const Post = (props) => {
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
   };
+
+  const handleDeleteConfirmation = () => {
+    if (window.confirm("Are you sure you want to delete this post?")) {
+      handleDelete();
+    }
+
+  }
 
   const handleDelete = async () => {
     try {
@@ -88,7 +96,8 @@ const Post = (props) => {
             {is_user && postPage && (
               <MoreDropdown
                 handleEdit={handleEdit}
-                handleDelete={handleDelete}
+                // handleDelete={handleDelete}
+                handleDelete={handleDeleteConfirmation}
               />
             )}
           </div>

@@ -5,7 +5,16 @@ import sys
 
 
 def main():
-    """Run administrative tasks."""
+    """
+    Run administrative tasks.
+
+    This function sets the default Django settings module and executes
+    administrative tasks using the `execute_from_command_line` function.
+
+    Raises:
+    - ImportError: If Django is not installed or
+    not available on the PYTHONPATH.
+    """
     os.environ.setdefault(
         'DJANGO_SETTINGS_MODULE',
         'drf_api_littleangels.settings'

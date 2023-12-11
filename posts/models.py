@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 
 
 class Post(models.Model):
+    """
+    Represents a post in a Django model.
+    """
 
     image_filter_choices = [
         ('1977', '1977'),
@@ -34,7 +37,16 @@ class Post(models.Model):
         choices=image_filter_choices, default='normal')
 
     class Meta:
+        """
+        Meta class for defining additional model-level properties.
+
+        Attributes:
+        - ordering: Specifies the default ordering for queries.
+        """
         ordering = ['-created_at']
 
     def __str__(self):
+        """
+        Returns a string representation of the Post instance.
+        """
         return f"{self.id}{self.title}"

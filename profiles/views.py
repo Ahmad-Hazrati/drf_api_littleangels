@@ -7,6 +7,9 @@ from .serializers import ProfileSerializer
 
 
 class ProfileList(generics.ListAPIView):
+    """
+    API view for listing Profile instances.
+    """
     queryset = Profile.objects.annotate(
         posts_count=Count('user__post', distinct=True),
         followers_count=Count('user__followed', distinct=True),
@@ -31,6 +34,9 @@ class ProfileList(generics.ListAPIView):
 
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
+    """
+    API view for retrieving and updating a specific Profile instance.
+    """
     queryset = Profile.objects.annotate(
         posts_count=Count('user__post', distinct=True),
         followers_count=Count('user__followed', distinct=True),

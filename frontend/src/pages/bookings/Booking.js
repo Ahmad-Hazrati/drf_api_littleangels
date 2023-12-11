@@ -30,6 +30,12 @@ const Booking = (props) => {
   const is_user = currentUser.pk === profile_id;
   console.log("is_user", is_user);
 
+  const handleDeleteConfirmation = () => {
+    if (window.confirm("Are you sure you want to delete this booking?")) {
+      handleDeleteBooking();
+    }
+  }
+
   const handleDeleteBooking = async () => {
     try {
       await axiosRes.delete(`/bookings/${id}/`);
@@ -63,7 +69,7 @@ const Booking = (props) => {
           <span className={styles.Date}>{modified_at}</span>
         </Media.Body>
         {is_user ? (
-          <MoreDropdown handleDelete={handleDeleteBooking} />
+          <MoreDropdown handleDelete={handleDeleteConfirmation} />
         ) : (
           <div>
             <Alert variant="warning">

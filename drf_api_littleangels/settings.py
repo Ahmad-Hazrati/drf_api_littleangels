@@ -17,11 +17,12 @@ import dj_database_url
 if os.path.exists('env.py'):
     import env
 
-
+# Configuration for Cloudinary
 CLOUDINARY_URL = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
     }
 
+# Configuration for Media Files
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
@@ -76,8 +77,10 @@ INSTALLED_APPS = [
     'bookings',
 ]
 
+# Site ID for Django Allauth
 SITE_ID = 1
 
+# Configuration for Django Rest Framework
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [(
         'rest_framework.authentication.SessionAuthentication'
@@ -89,6 +92,8 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
     'DATETIME_FORMAT': '%d %b %Y',
 }
+
+# Configuration for JWT Authentication
 if 'DEV' not in os.environ:
     REST_FRAMEWORK[
         'DEFAULT_RENDERER_CLASSES'
@@ -102,11 +107,12 @@ JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 
+# Configuration for REST Auth Serializers
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'drf_api_littleangels.serializers.CurrentUserSerializer'
 }
 
-
+# Middleware settings
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -119,14 +125,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# CORS Configuration
 CORS_ALLOWED_ORIGINS = [
     os.environ.get('CLIENT_ORIGIN')
 ]
 
 CORS_ALLOW_CREDENTIALS = True
 
+# URL Configuration
 ROOT_URLCONF = 'drf_api_littleangels.urls'
 
+# Template Configuration
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -143,12 +152,13 @@ TEMPLATES = [
     },
 ]
 
+# WSGI Configuration
 WSGI_APPLICATION = 'drf_api_littleangels.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+# Database Configuration
 if 'DEV' in os.environ:
     DATABASES = {
         'default': {
@@ -198,12 +208,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+# Static Files Configuration
 STATIC_URL = '/static/'
-
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 WHITENOISE_ROOT = BASE_DIR / 'staticfiles' / 'build'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+# Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

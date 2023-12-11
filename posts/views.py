@@ -7,6 +7,9 @@ from .serializers import PostSerializer
 
 
 class PostList(generics.ListCreateAPIView):
+    """
+    API view for listing and creating Post instances.
+    """
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Post.objects.annotate(
@@ -33,10 +36,22 @@ class PostList(generics.ListCreateAPIView):
     ]
 
     def perform_create(self, serializer):
+        """
+        Custom method to set the user field when creating a new Post instance.
+
+        Args:
+        - serializer: The PostSerializer instance used for creating the Post.
+
+        Returns:
+        - None
+        """
         serializer.save(user=self.request.user)
 
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    API view for retrieving, updating, and deleting a specific Post instance.
+    """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = PostSerializer
     queryset = Post.objects.annotate(

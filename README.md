@@ -50,7 +50,7 @@ And can be accessed by this [link.](https://drf-api-littleangels-f86db13e3ae5.he
     - [Python Validator - PEP8](#python-validator-pep8)
     - [HTML W3C Validator](#html-w3c-validator)
     - [CSS Jigsaw Validator](#css-jigsaw-validator)
-    - [Jshint Validator](#jshint-validator)
+    - [ESLint Validator](#eslint-validator)
   - [Manual Testing](#manual-testing)
     - [Front-end](#front-end)
     - [Back-end / API](#back-end-or-api)
@@ -257,6 +257,7 @@ All user stories implementation progress was registered using [littleangels_proj
   - This section is only visible to authenticated users and contains all details of the event including booking functionality. 
   - The user can book the event by clicking the book button.
   - If the user is the owner of the booking then s/he can delete his/her bookings through a drop down menu.
+  - If the booking is blocked by the admin then the user will be notified with a warning message.
   ![Post detail](/readme_assets/event_detail.png)<br><br>
   - __Feed__ 
   - The feed section is visible to authenticated users.
@@ -293,6 +294,7 @@ All user stories implementation progress was registered using [littleangels_proj
 - __Builtin Admin Panel__ 
   - The builtin admin panel is only visible to authorized user and allows the user with admin rights to log in and securely access the website administration panel.
   - The page allows the admin to create, read, update and delete the contents of the event, and category. 
+  - The page allows the admin to stop booking functionality for normal users.
   ![Builtin Admin Panel](/readme_assets/admin_panel.png)<br><br>
 
 
@@ -345,7 +347,7 @@ Further features inclusive (cited above) to implement are:
 [Zarla](https://www.zarla.com/): used to generate the website favicon and logo.<br>
 [Font Awesome](https://fontawesome.com/): used for creating attractive UX with icons.<br>
 [Google Fonts](https://fonts.google.com/): used for project typography.<br>
-[JsHint](https://jshint.com/): used to validate the scripts.<br>
+[ESLint](https://eslint.org/): used to validate the JSX codes.<br>
 [CI Python Linter](https://pep8ci.herokuapp.com/#/): used to perform check of Python code.<br>
 [HTML - W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options): used to valid the HTML pages.<br>
 [CSS - Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri): used to valid the CSS.<br>
@@ -570,9 +572,14 @@ All css modules are checked and no errors were found when passing through the of
 ![Styles Modules](/readme_assets/jigsaw_css_validator.png)
 
 
-#### Jshint Validator
-No errors were found when passing through the JSHint.
-  ![JSHint validator comments.js](/media/images/jshint_comments.png)
+#### ESLint JSX Validator
+All JSX codes were tested for potential errors with ESLint. Most of the errors are rectified except the below ones which are addressed here. Worth to mention that these codes were refactored based on the resources availabe in the stackoverflow but as it doesn't rectify the error, so left as it is. Nevertheless, these codes are mostly the same as were addressed in the P5 Walkthrough Project.
+![MoreDropdown](/readme_assets/eslint_moredropdown.png)<br>
+![ProfilePage](/readme_assets/eslint_profilepage.png)<br>
+![PostPage](/readme_assets/eslint_postpage.png)<br>
+![PostsPage](/readme_assets/eslint_postspage.png)<br>
+
+
 
   ### Manual Testing
 
@@ -601,6 +608,7 @@ No errors were found when passing through the JSHint.
   - The event details are displaying as expected. 
   - The buttons to book or go back to the event section are working fine.
   - The booking function works without any issues. The fuctionality to check the current user and display the dropdown menu to delete the booking is working properly. 
+  - The function to stop more booking from admin panel is working without any issue. The warning message is displaying.
   - The alert message for deletion of the booking is working properly.
   - The feed button works and navigates the user to the feed section as expected. The follower and following users' posts are loading without any issues. The scroll function functions in the deployed version as expected and loads more posts as the user scrolls down.
   - The like button works and navigates the user to the liked section without any issues. The posts liked by the user are fetching and loading properly. 

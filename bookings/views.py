@@ -6,6 +6,13 @@ from .serializers import BookingSerializer
 
 
 class BookingList(generics.ListCreateAPIView):
+    """
+    API view for listing and creating Booking instances.
+
+    This view allows users to:
+    - Retrieve a list of all bookings.
+    - Create a new booking instance.
+    """
     serializer_class = BookingSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Booking.objects.all()
@@ -18,6 +25,13 @@ class BookingList(generics.ListCreateAPIView):
 
 
 class BookingDetail(generics.RetrieveDestroyAPIView):
+    """
+    API view for retrieving and deleting a specific Booking instance.
+
+    This view allows users to:
+    - Retrieve details of a specific booking.
+    - Delete a specific booking instance.
+    """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = BookingSerializer
     queryset = Booking.objects.all()
