@@ -23,6 +23,12 @@ class BookingList(generics.ListCreateAPIView):
         'event'
     ]
 
+    def perform_create(self, serializer):
+        """
+        Method to associate the comment with the current request user upon creation.
+        """
+        serializer.save(user=self.request.user)
+
 
 class BookingDetail(generics.RetrieveDestroyAPIView):
     """

@@ -24,7 +24,7 @@ class Post(models.Model):
         ('xpro2', 'X-pro II')
     ]
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default="admin")
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)

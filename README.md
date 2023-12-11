@@ -293,7 +293,7 @@ All user stories implementation progress was registered using [littleangels_proj
   ![Login](/readme_assets/signin.png)<br><br>
 - __Builtin Admin Panel__ 
   - The builtin admin panel is only visible to authorized user and allows the user with admin rights to log in and securely access the website administration panel.
-  - The page allows the admin to create, read, update and delete the contents of the event, and category. 
+  - The page allows the admin to create, read, update, and delete the contents of the event, and category. 
   - The page allows the admin to stop booking functionality for normal users.
   ![Builtin Admin Panel](/readme_assets/admin_panel.png)<br><br>
 

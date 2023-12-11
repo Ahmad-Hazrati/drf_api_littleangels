@@ -21,6 +21,7 @@ const Booking = (props) => {
   } = props;
 
   const currentUser = useCurrentUser();
+  const is_user = currentUser?.username === user;
 
   // user is undefined => you are not sending this data
   console.log("profile_id: ", profile_id);
@@ -28,7 +29,7 @@ const Booking = (props) => {
   console.log("props: ", props);
   console.log("currentUser: ", currentUser);
   console.log("currentUser.pk: ", currentUser.pk);
-  const is_user = currentUser.pk === profile_id;
+  // const is_user = currentUser.pk == profile_id;
   console.log("is_user", is_user);
 
   const handleDeleteConfirmation = () => {
@@ -44,7 +45,7 @@ const Booking = (props) => {
         results: [
           {
             ...prevEvent.results[0],
-            Bookings_count: prevEvent.results[0].Bookings_count - 1,
+            bookings_count: prevEvent.results[0].bookings_count - 1,
           },
         ],
       }));
@@ -54,7 +55,7 @@ const Booking = (props) => {
         results: prevBookings.results.filter((booking) => booking.id !== id),
       }));
     } catch (err) {
-      undefined
+      console.log(err)
     }
   };
 

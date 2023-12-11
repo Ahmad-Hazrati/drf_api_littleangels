@@ -8,7 +8,8 @@ from .serializers import ProfileSerializer
 
 class ProfileList(generics.ListAPIView):
     """
-    API view for listing Profile instances.
+    List all profiles.
+    No create view as profile creation is handled by django signals.
     """
     queryset = Profile.objects.annotate(
         posts_count=Count('user__post', distinct=True),

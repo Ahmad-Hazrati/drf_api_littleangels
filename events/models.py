@@ -58,6 +58,7 @@ class Event(models.Model):
         ('xpro2', 'X-pro II')
     ]
 
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(
         Category,
         on_delete=models.SET_NULL,
