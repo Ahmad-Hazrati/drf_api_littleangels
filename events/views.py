@@ -26,17 +26,20 @@ class EventList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         """
-        Overrides the default behavior to set the user field during event creation.
+        Overrides the default behavior to set the user field
+        during event creation.
 
         Parameters:
-        - serializer (EventSerializer): The serializer instance used for event creation.
+        - serializer (EventSerializer): The serializer instance
+        used for event creation.
         """
         serializer.save(user=self.request.user)
 
 
 class EventDetail(generics.RetrieveUpdateDestroyAPIView):
     """
-    API endpoint that allows retrieving, updating, and deleting individual events.
+    API endpoint that allows retrieving, updating, and deleting
+    individual events.
     """
     serializer_class = EventSerializer
     permission_classes = [IsOwnerOrReadOnly]

@@ -6,8 +6,9 @@ class BookingSerializer(serializers.ModelSerializer):
     """
     Serializer class for the Booking model.
 
-    This serializer is used to convert Booking model instances into JSON representations
-    for API responses and to validate and parse incoming data for creating or updating Booking instances.
+    This serializer is used to convert Booking model instances
+    into JSON representations for API responses and to validate
+    and parse incoming data for creating or updating Booking instances.
     """
     user = serializers.ReadOnlyField(source='user.username')
     is_user = serializers.SerializerMethodField()
