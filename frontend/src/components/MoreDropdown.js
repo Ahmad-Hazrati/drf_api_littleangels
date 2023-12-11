@@ -17,7 +17,7 @@ const DropdownMenu = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
-export const MoreDropdownBooking = ({ handleDelete }) => {
+export const MoreDropdownBooking = ({ handleDeleteBooking }) => {
   return (
     <Dropdown className="ml-auto" drop="left">
       <Dropdown.Toggle as={DropdownMenu} />
@@ -27,7 +27,7 @@ export const MoreDropdownBooking = ({ handleDelete }) => {
       >
         <Dropdown.Item
           className={styles.DropdownItem}
-          onClick={handleDelete}
+          onClick={handleDeleteBooking}
           aria-label="delete"
         >
           <i className="fas fa-trash-alt" />

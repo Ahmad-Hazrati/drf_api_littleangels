@@ -96,7 +96,6 @@ const Post = (props) => {
             {is_user && postPage && (
               <MoreDropdown
                 handleEdit={handleEdit}
-                // handleDelete={handleDelete}
                 handleDelete={handleDeleteConfirmation}
               />
             )}

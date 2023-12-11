@@ -1,5 +1,6 @@
 import React from "react";
 import Media from "react-bootstrap/Media";
+import Card from "react-bootstrap/esm/Card";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { MoreDropdownBooking } from "../../components/MoreDropdown";
@@ -36,7 +37,7 @@ const Booking = (props) => {
     if (window.confirm("Are you sure you want to delete this booking?")) {
       handleDeleteBooking();
     }
-  }
+  };
 
   const handleDeleteBooking = async () => {
     try {
@@ -55,31 +56,36 @@ const Booking = (props) => {
         results: prevBookings.results.filter((booking) => booking.id !== id),
       }));
     } catch (err) {
-      console.log(err)
+      undefined;
     }
   };
 
   return (
     <>
-      <hr />
-      <Media>
-        <Link to={`/profiles/${profile_id}`}>
-          <Avatar src={profile_image} />
-        </Link>
-        <Media.Body className="align-self-center ml-2">
-          <span className={styles.Owner}>{user}</span>
-          <span className={styles.Date}>{modified_at}</span>
-        </Media.Body>
-        {is_user ? (
-          <MoreDropdownBooking handleDelete={handleDeleteConfirmation} />
-        ) : (
-          <div>
-            <Alert variant="warning">
-              You are not the authorized user to delete this booking
-            </Alert>
-          </div>
-        )}
-      </Media>
+      <Card className={`${styles.Post} my-2`}>
+        <Card.Body>
+          <Media className="align-items-center justify-content-between">
+            <Link to={`/profiles/${profile_id}`}>
+              <Avatar src={profile_image} height={55} />
+              {user}
+            </Link>
+            <div className="d-flex align-items-center">
+              <span>{modified_at}</span>
+              {is_user ? (
+                <MoreDropdownBooking
+                  handleDeleteBooking={handleDeleteConfirmation}
+                />
+              ) : (
+                <div>
+                  <Alert variant="warning">
+                    You are not the authorized user to delete this booking
+                  </Alert>
+                </div>
+              )}
+            </div>
+          </Media>
+        </Card.Body>
+      </Card>
     </>
   );
 };
