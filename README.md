@@ -34,6 +34,7 @@ And can be accessed by this [link.](https://drf-api-littleangels-f86db13e3ae5.he
 - [Agile Methodology](#agile-methodology)
 - [Features](#features)
   - [Existing Features](#existing-features)
+    - [Re-use of Components](#re-use-of-components)
   - [Features Left to Implement](#features-left-to-implement)
 - [Technologies Used](#technologies-used)
   - [Languages Used](#languages-used)
@@ -192,7 +193,7 @@ Wirefram is used to plan and sketch the website.
 PostgreSQL relational database is used to store the website data. The database model diagram is designed using [Miro](https://miro.com/).
 <details>
   <summary>Database Schema</summary>
-<img src="readme_assets/entitiy_relationship_diagram.jpg"><br>
+<img src="readme_assets/entity_relationships_diagram.jpg"><br>
 </details>
 
 ### Surface (Design)
@@ -296,10 +297,32 @@ All user stories implementation progress was registered using [littleangels_proj
   - The page allows the admin to create, read, update, and delete the contents of the event, and category. 
   - The page allows the admin to stop booking functionality for normal users.
   ![Builtin Admin Panel](/readme_assets/admin_panel.png)<br><br>
+  
+  #### Re-use of Components
+  - **Asset.js**
+  Asset component has been extensively used in other components to display spinner and message while the data loads and display the message in case of any error or notification. It is used in NavBar.js, NotFound.js, EventsPage.js, PostCreateForm.js, PostPage.js, PostsPage.js, PopularProfiles and ProfilePage.
+
+  - **Avatar.js**
+  The Avatar component has been used in other components to display the user avatar. It is used almost on all pages.
+
+  - **MoreDropdown.js**
+  This component has been used in Booking.js, comment.js, Post.js and ProfilePage.js to provide the Dropdownmenu for edit, delete and udpate icons.
+
+  - **CurrentUserContext.js**
+  This component has been almost in all components to authenticate current user.
+
+  - **ProfileDataContext.js**
+  ProfileDataContext.js has been used extensively in PopularProfiles.js, Profile.js, and ProfilePage.js to provide follow/unfollow functionalities.
+
+  - **useRedirect.js**
+  This component has been used to provide redirect functionality for SignInForm.js, SignUpForm.js, and PostCreateForm.js.
+
+  - **utils.js**
+  The utils.js component has embedded a set of functionalities that are used in other components, such as fetchMoreData, followHelper, unFollowHelper, and TokenTimestamps. 
 
 
 ### Features Left to Implement
-Initially, the idea was that the event section should have like functionality same as the post section. The booking of the event should be based on the number of seats available and one user could book only one seat but due to limited time constraints couldn't implemented.
+Initially, the idea was that the event section should have "like" functionality as the post section. The booking of the event should be based on the number of seats available and one user could book only one seat but due to limited time constraints couldn't implemented.
 Further features inclusive (cited above) to implement are:
 - Another feature to add could be a chat functionality. 
 - a review page will be a better feature to be added to the app.
@@ -312,26 +335,27 @@ Further features inclusive (cited above) to implement are:
 - **Markdown**: Used exclusively for README.
 
 ### Python Packages
-- **django**
-- **djangorestframework**
-- **django-allauth**
-- **django-filter**
-- **Pillow**
-- **gunicorn**
-- **psycopg2**
-- **PyJWT**
-- **dj-cloudinary-storage**
-- **whitenoise**
-- **autopep8**
+- **django** : Django is a high-level web framework for building web applications in Python. It provides a clean and pragmatic design for developing web applications and follows the model-view-controller (MVC) architectural pattern.
+- **djangorestframework** : This is a powerful and flexible toolkit for building Web APIs in Django. It adds features like authentication, serialization, and viewsets to make it easier to build RESTful APIs.
+- **django-allauth** : Django Allauth is a Django-based authentication system that handles everything from user registration to account management. It provides a customizable set of views, forms, and templates for handling authentication-related tasks.
+- **django-filter** : Django Filter is used for allowing users to filter down the queryset based on model fields. It simplifies the process of creating dynamic querysets by providing a simple yet powerful way to filter down data based on parameters a user provides.
+- **Pillow** : It is an updated fork of the Python Imaging Library (PIL) and provides easy-to-use methods for opening, manipulating, and saving many different image file formats.
+- **gunicorn** : Gunicorn (Green Unicorn) is a WSGI HTTP server for Python web applications. It is commonly used to deploy Django applications in production, providing a stable and efficient server for handling HTTP requests.
+- **psycopg2** : psycopg2 is a PostgreSQL adapter for Python. It enables Python applications to connect to a PostgreSQL database and perform various database operations.
+- **PyJWT** : PyJWT is a Python library for encoding and decoding JSON Web Tokens (JWT). It is commonly used in web authentication and authorization mechanisms.
+- **dj-cloudinary-storage** : This is a Django storage backend for Cloudinary, a cloud-based image and video management service. It allows you to easily integrate Cloudinary with your Django project for handling media files.
+- **whitenoise** : WhiteNoise is a lightweight WSGI middleware for serving static files directly from Django application. It simplifies the process of serving static files in production without relying on a separate web server.
+- **autopep8** : autopep8 is a tool that automatically formats Python code to comply with the PEP 8 style guide. It helps maintain a consistent coding style and can be integrated into development workflows to ensure code consistency.
 
 ### JavaScript Packages
-- **react**
-- **react-dom**
-- **axios**
-- **react-scripts**
-- **jwt-decode**
-- **react-bootstrap**
-- **react-infinite-scorll-component**
+- **react** : The core library for building user interfaces in React. It provides the foundational elements and APIs for creating components, managing state, and handling the rendering of UI elements in a React application.
+- **react-dom** : A package that provides the DOM-specific methods that are used to interact with the DOM (Document Object Model). It's responsible for rendering React components into the DOM, updating them, and handling events.
+- **axios** : A promise-based HTTP client for making asynchronous HTTP requests. It simplifies the process of sending requests to a server and handling responses. Used for communicating with RESTful APIs.
+- **react-scripts** : A set of scripts and configurations used by Create React App (CRA) to build and run a React application.
+- **jwt-decode** :  A library for decoding JSON Web Tokens (JWT). Useful for working with authentication tokens in client-side applications.
+- **react-bootstrap** : A set of Bootstrap components implemented as React components. It is to provide pre-designed, responsive UI components, making it easier to create visually appealing and consistent user interfaces.
+- **react-infinite-scorll-component** : It enables loading additional content as the user scrolls down a page, providing a seamless and continuous user experience for large datasets.
+- **ESLint** : A tool for identifying and fixing problems in JavaScript code. It enforces coding standards, identifies potential issues, and helps maintain a consistent code style within a project.
 
 ### Programs Used
 [React-Bootstrap4](https://react-bootstrap-v4.netlify.app/): used to add predefined styled elements and responsiveness.<br>
@@ -532,7 +556,7 @@ Google Chrome lighthouse checks and generates a comprehensive report regarding t
 **posts apps.py** : No errors or warnings to show.<br>
 ![posts apps.py PEP8](/readme_assets/posts_apps.png)<br>
 **posts models.py** : No errors or warnings to show.<br>
-![posts models.py PEP8](/readme_assets/models_admin.png)<br>
+![posts models.py PEP8](/readme_assets/posts_models.png)<br>
 **posts serializers.py** : No errors or warnings to show.<br>
 ![posts serializers.py PEP8](/readme_assets/posts_serializers.png)<br>
 **posts tests.py** : No errors or warnings to show.<br>
@@ -542,7 +566,7 @@ Google Chrome lighthouse checks and generates a comprehensive report regarding t
 **posts views.py** : No errors or warnings to show.<br>
 ![posts views.py PEP8](/readme_assets/posts_views.png)<br>
 
--**profiles app**<br>
+- **profiles app**<br>
 **profiles admin.py** : No errors or warnings to show.<br>
 ![profiles admin.py PEP8](/readme_assets/profiles_admin.png)<br>
 **profiles apps.py** : No errors or warnings to show.<br>
@@ -563,22 +587,21 @@ Google Chrome lighthouse checks and generates a comprehensive report regarding t
 ![manage.py PEP8](/readme_assets/manage.png)<br>
 
 #### HTML W3C Validator
-As this is a Django project, the HTML couldn't be tested via the site's URL, due to Django tags and Jinja templating language in HTML files. Instead, the source code of each page was pasted into the validator directly.<br>
-**index.html**: No errors or warnings to show.
+The index.html has been checked and no errors were found when passing through the official WC3 Validator<br>
+**index.html**: No errors or warnings to show.<br>
 ![Index](/readme_assets/w3c_validator_index.png)<br><br>
 
 #### CSS Jigsaw Validator
-All css modules are checked and no errors were found when passing through the official W3C CSS.
-![Styles Modules](/readme_assets/jigsaw_css_validator.png)
+All css modules are checked and no errors were found when passing through the official JIGSAW CSS.<br>
+![Styles Modules](/readme_assets/jigsaw_css_validator.png)<br>
 
 
 #### ESLint JSX Validator
-All JSX codes were tested for potential errors with ESLint. Most of the errors are rectified except the below ones which are addressed here. Worth to mention that these codes were refactored based on the resources availabe in the stackoverflow but as it doesn't rectify the error, so left as it is. Nevertheless, these codes are mostly the same as were addressed in the P5 Walkthrough Project.
+All JSX codes were tested for potential errors with ESLint. Most of the errors are rectified except the below ones which are addressed here. Worth to mention that these codes were refactored based on the resources availabe in the stackoverflow but as it doesn't rectify the error, so left as it is. Nevertheless, these codes are mostly the same as were addressed in the P5 Walkthrough Project.<br>
 ![MoreDropdown](/readme_assets/eslint_moredropdown.png)<br>
 ![ProfilePage](/readme_assets/eslint_profilepage.png)<br>
 ![PostPage](/readme_assets/eslint_postpage.png)<br>
 ![PostsPage](/readme_assets/eslint_postspage.png)<br>
-
 
 
   ### Manual Testing
@@ -646,10 +669,10 @@ User Stories are fully achieved. They are discussed in [**User Stories**](#user-
    </tr>
    <tr>
    <td>
-   DeleteConfirmation component was not functioning while delete functions were called.
+   The user was not passing as prop in Booking.js, therefore, the delete booking functionality was not working.
    </td>
    <td>
-   
+   The issue has been rectified by adding the user attribute as a foreign key to the event model and serializer.
    </td>
    </tr>
    <tr>
@@ -692,6 +715,16 @@ User Stories are fully achieved. They are discussed in [**User Stories**](#user-
    Worth to mention that in the deployed version it is working completely fine.
    </td>
    </tr>
+   <tr>
+   <td>While validating the JSX codes by ESLint, 4 JSX components were not successfully passed and raised below errors.
+  1. `ProfilePage (122:11  error  Do not pass children as props. Instead, nest children between the opening and closing tags  react/no-children-prop)`<br>
+  2. `PostsPage (70:17  error  Do not pass children as props. Instead, nest children between the opening and closing tags  react/no-children-prop)`<br>
+  3. `PostPage (65:15  error  Do not pass children as props. Instead, nest children between the opening and closing tags  react/no-children-prop)`<br>
+  4. `MoreDropdown (9:22  error  Component definition is missing display name  react/display-name)`
+   </td>
+   <td>Checked in Slack and Stackoverflow for a possible suitable solution, but unfortunately, the solutions do not work for these errors. The errors have also been followed with tutors, but since there was no issue in the codes and comply with the Walkthrough project, therefore, left as it is.
+   </td>
+   </tr>
    
   </table>
 
@@ -709,10 +742,11 @@ User Stories are fully achieved. They are discussed in [**User Stories**](#user-
 
 ### Code
 - The code used for most parts of the website is taken from the [PP5 Walkthrough Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/).
-- The code used for events and bookings api are written with the support of mentor.
+- The code used for events and bookings api are written with the support of the mentor.
 
 ## Acknowledgements
 - Thanks to my Code Institute mentor Ms. Juliia Konovalov for her guidance, insight, and constant confidence boost to help me in the right direction.
 - Thanks to Code Institute for material and support (Tutor Assistance), Slack Community, and other valuable online resources.
+- Some insight and help also taken stack overflows.
 <br><br>
 <a href="#contents">BACK TO CONTENTS 🔼</a>

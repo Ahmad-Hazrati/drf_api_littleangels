@@ -24,15 +24,6 @@ const Booking = (props) => {
   const currentUser = useCurrentUser();
   const is_user = currentUser?.username === user;
 
-  // user is undefined => you are not sending this data
-  console.log("profile_id: ", profile_id);
-  console.log("booking id: ", id);
-  console.log("props: ", props);
-  console.log("currentUser: ", currentUser);
-  console.log("currentUser.pk: ", currentUser.pk);
-  // const is_user = currentUser.pk == profile_id;
-  console.log("is_user", is_user);
-
   const handleDeleteConfirmation = () => {
     if (window.confirm("Are you sure you want to delete this booking?")) {
       handleDeleteBooking();
