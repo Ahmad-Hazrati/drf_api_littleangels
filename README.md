@@ -656,7 +656,9 @@ All JSX codes were tested for potential errors with ESLint. Most of the errors a
   - The admin user can publish events.
 
 ### Testing User Stories
-User Stories are fully achieved. They are discussed in [**User Stories**](#user-stories) section under **Strategy** and for more details please refer to [Github Repository](https://github.com/users/Ahmad-Hazrati/projects/8/views/1).
+User Stories are fully achieved and project is closed.<br>
+![Little Angels Project](/readme_assets/closed_project.png)<br>
+They are discussed in [**User Stories**](#user-stories) section under **Strategy** and for more details please refer to [Github Repository](https://github.com/users/Ahmad-Hazrati/projects/8/views/1).
 
 <a href="#contents">BACK TO CONTENTS 🔼</a>
 
